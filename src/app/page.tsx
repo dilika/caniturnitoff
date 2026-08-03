@@ -5,9 +5,9 @@ import { SponsorGrid, SponsorStrip } from "@/components/Sponsors";
 import { rankedEntries, siteStats } from "@/lib/content";
 import { site } from "@/lib/site";
 
-export default function HomePage() {
-  const entries = rankedEntries();
-  const stats = siteStats();
+export default async function HomePage() {
+  const entries = await rankedEntries();
+  const stats = await siteStats();
 
   return (
     <>

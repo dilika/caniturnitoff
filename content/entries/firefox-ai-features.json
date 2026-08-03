@@ -30,9 +30,14 @@
   "whyTheyDidIt": "Mozilla shipped AI features but kept a real off switch — this is what the baseline should look like everywhere.",
   "sources": [
     {
-      "label": "Kaspersky — Firefox AI Controls and browser.ml prefs",
-      "url": "https://www.kaspersky.com/blog/how-to-switch-off-ai/55383/",
-      "type": "press"
+      "label": "Mozilla — How to turn off AI features in Firefox, or choose the ones you want",
+      "url": "https://blog.mozilla.org/en/firefox/how-to-use-ai-controls/",
+      "type": "vendor"
+    },
+    {
+      "label": "Firefox Help — Block generative AI features with Firefox AI controls",
+      "url": "https://support.mozilla.org/ml/kb/firefox-ai-controls",
+      "type": "vendor"
     }
   ],
   "lastVerified": "2026-08-03",

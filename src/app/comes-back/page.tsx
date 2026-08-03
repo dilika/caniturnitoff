@@ -10,8 +10,9 @@ export const metadata: Metadata = {
     "You turned it off. The update turned it back on. Every tracked AI feature with documented reports of the setting resetting itself.",
 };
 
-export default function ComesBackPage() {
-  const entries = rankedEntries().filter((e) => e.comesBack);
+export default async function ComesBackPage() {
+  const allRanked = await rankedEntries();
+  const entries = allRanked.filter((e) => e.comesBack);
   return (
     <>
       <h1 className="text-2xl font-semibold tracking-tight text-flag">it came back</h1>

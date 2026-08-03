@@ -10,12 +10,22 @@
   "comesBack": false,
   "enterpriseOnly": false,
   "difficulty": 5,
-  "summary": "Meta ships no switch to remove Meta AI from WhatsApp. You can avoid tapping it and you can mute or archive the chat, but the assistant and its entry points stay in the app.",
+  "summary": "Meta ships no switch to remove Meta AI from WhatsApp. You can now hide the blue circle button (Settings → Chats → Show Meta AI Button, rolling out in phases), and Advanced Chat Privacy blocks @Meta AI in specific chats. But the assistant itself stays in the app — there is no way to turn it off.",
   "steps": [
     {
       "platform": "android / ios",
       "kind": "setting",
       "path": "There is no disable option. Mitigations only: never tap the Meta AI circle, archive/mute the Meta AI chat, and avoid @-mentioning it in group chats."
+    },
+    {
+      "platform": "android / ios",
+      "kind": "setting",
+      "path": "Hide the button (phased rollout, not all users have it yet): Settings → Chats → toggle off \"Show Meta AI Button\". This removes the blue circle from the chat list but does not disable Meta AI."
+    },
+    {
+      "platform": "android / ios",
+      "kind": "setting",
+      "path": "Block AI in specific chats: open the chat → tap name at top → Advanced Chat Privacy → toggle on. Prevents @Meta AI usage in that conversation. Per-chat, not global."
     },
     {
       "platform": "android",
@@ -28,8 +38,13 @@
   "whyTheyDidIt": "Meta AI's usage numbers come from being placed inside apps with billions of daily users — an off switch would collapse them.",
   "sources": [
     {
-      "label": "Consumer Reports — Meta gives no way to disable its AI tools altogether",
-      "url": "https://www.consumerreports.org/electronics/artificial-intelligence/turn-off-ai-tools-gemini-apple-intelligence-copilot-and-more-a1156421356/",
+      "label": "BBC News — WhatsApp defends 'optional' AI tool that cannot be turned off",
+      "url": "https://www.bbc.co.uk/news/articles/cd7vzw78gz9o",
+      "type": "press"
+    },
+    {
+      "label": "Proton — How to turn off Google AI / Meta AI",
+      "url": "https://proton.me/blog/turn-off-meta-ai-facebook",
       "type": "press"
     }
   ],

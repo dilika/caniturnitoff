@@ -47,8 +47,8 @@ export type RankedEntry = Entry & {
  * Ranking = the Offender List order.
  * Harshest verdict first, then most disputed, then most annoying to disable.
  */
-export function rankedEntries(): RankedEntry[] {
-  const votes = getVoteCounts();
+export async function rankedEntries(): Promise<RankedEntry[]> {
+  const votes = await getVoteCounts();
   return loadEntries()
     .map((entry) => {
       const v = votes[entry.slug] ?? { works: 0, changed: 0 };
@@ -65,16 +65,19 @@ export function rankedEntries(): RankedEntry[] {
     .map((e, i) => ({ ...e, rank: i + 1 }));
 }
 
-export function getEntry(slug: string): RankedEntry | undefined {
-  return rankedEntries().find((e) => e.slug === slug);
+export async function getEntry(slug: string): Promise<RankedEntry | undefined> {
+  const entries = await rankedEntries();
+  return entries.find((e) => e.slug === slug);
 }
 
-export function entriesByCategory(category: string): RankedEntry[] {
-  return rankedEntries().filter((e) => e.category === category);
+export async function entriesByCategory(category: string): Promise<RankedEntry[]> {
+  const entries = await rankedEntries();
+  return entries.filter((e) => e.category === category);
 }
 
-export function entriesByVendor(vendor: string): RankedEntry[] {
-  return rankedEntries().filter(
+export async function entriesByVendor(vendor: string): Promise<RankedEntry[]> {
+  const entries = await rankedEntries();
+  return entries.filter(
     (e) => e.vendor.toLowerCase().replace(/\s+/g, "-") === vendor,
   );
 }
@@ -93,8 +96,8 @@ export type SiteStats = {
   vendors: number;
 };
 
-export function siteStats(): SiteStats {
-  const entries = rankedEntries();
+export async function siteStats(): Promise<SiteStats> {
+  const entries = await rankedEntries();
   const byVerdict = { off: 0, buried: 0, never: 0 } as Record<Verdict, number>;
   let onByDefault = 0;
   let comesBack = 0;

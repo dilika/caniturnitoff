@@ -2,6 +2,17 @@
 
 import { useState } from "react";
 
+function getVoterId(): string {
+  if (typeof window === "undefined") return "";
+  const key = "citio_voter_id";
+  let id = localStorage.getItem(key);
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem(key, id);
+  }
+  return id;
+}
+
 export function VoteButtons({
   slug,
   initial,
@@ -12,6 +23,7 @@ export function VoteButtons({
   const [counts, setCounts] = useState(initial);
   const [voted, setVoted] = useState<null | "works" | "changed">(null);
   const [pending, setPending] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
 
   async function vote(kind: "works" | "changed") {
     if (voted || pending) return;
@@ -22,14 +34,27 @@ export function VoteButtons({
       const res = await fetch("/api/vote", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ slug, kind }),
+        body: JSON.stringify({ slug, kind, voterId: getVoterId() }),
       });
       if (res.ok) {
         const data = (await res.json()) as { works: number; changed: number };
         setCounts(data);
+        setMessage("logged. votes flag an entry for review, they never flip a verdict.");
+      } else if (res.status === 409) {
+        setVoted(null);
+        setCounts(initial);
+        setMessage("you already voted on this entry.");
+      } else if (res.status === 429) {
+        setVoted(null);
+        setCounts(initial);
+        setMessage("too many votes too fast. try again in a minute.");
+      } else {
+        setVoted(null);
+        setCounts(initial);
       }
     } catch {
-      /* optimistic count stays; the vote is a signal, not accounting */
+      setVoted(null);
+      setCounts(initial);
     } finally {
       setPending(false);
     }
@@ -54,7 +79,7 @@ export function VoteButtons({
         ⚠️ it changed <span className="tabular-nums text-fg">{counts.changed}</span>
       </button>
       <span className="text-[11px] text-dim">
-        {voted ? "logged. votes flag an entry for review, they never flip a verdict." : "one vote per entry"}
+        {message ?? "one vote per entry"}
       </span>
     </div>
   );

@@ -25,13 +25,13 @@
   "whyTheyDidIt": "Your photo library is the most personal training and engagement surface Google has on your phone.",
   "sources": [
     {
-      "label": "Gadget Hacks — disabling Gemini in Google Photos",
-      "url": "https://android.gadgethacks.com/how-to/how-to-disable-google-ai-on-android-16-steps-that-work/",
-      "type": "press"
+      "label": "Google Photos Help — Stop using Ask Photos & turn off Gemini in Photos",
+      "url": "https://support.google.com/photos/answer/15318661",
+      "type": "vendor"
     },
     {
-      "label": "Yahoo Tech — Google AI is creeping into every app on your phone",
-      "url": "https://tech.yahoo.com/ai/gemini/articles/google-ai-creeping-every-app-171723112.html",
+      "label": "HowToGeek — Google Photos will finally make it easier to turn off Ask Photos",
+      "url": "https://www.howtogeek.com/google-photos-will-finally-let-you-turn-off-the-controversial-ask-photos-feature/",
       "type": "press"
     }
   ],

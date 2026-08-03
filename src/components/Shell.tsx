@@ -28,8 +28,8 @@ export function Nav() {
   );
 }
 
-export function StatStrip() {
-  const s = siteStats();
+export async function StatStrip() {
+  const s = await siteStats();
   const items = [
     { k: "features tracked", v: s.total },
     { k: "can't be turned off", v: `${s.neverShare}%` },

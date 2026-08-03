@@ -10,7 +10,7 @@
   "comesBack": false,
   "enterpriseOnly": false,
   "difficulty": 1,
-  "summary": "One master toggle in Settings, and turning it off can free up several gigabytes of on-device model storage. Individual pieces (notification summaries, writing tools, image generation) can also be killed separately.",
+  "summary": "One master toggle in Settings, and turning it off can free up several gigabytes of on-device model storage. Individual pieces (notification summaries, writing tools, image generation) can also be killed separately. Note: iOS 27 (currently beta, expected September 2026) removes the master toggle — individual features must be disabled one by one.",
   "steps": [
     {
       "platform": "ios / ipados / macos",
@@ -36,13 +36,13 @@
   "whyTheyDidIt": "Apple ties Intelligence to hardware upgrades, so it ships enabled on every capable device.",
   "sources": [
     {
-      "label": "Consumer Reports — how to turn off Apple Intelligence",
-      "url": "https://www.consumerreports.org/electronics/artificial-intelligence/turn-off-ai-tools-gemini-apple-intelligence-copilot-and-more-a1156421356/",
-      "type": "press"
+      "label": "Apple Support — Turn off Apple Intelligence on your iPhone",
+      "url": "https://support.apple.com/guide/iphone/intro-to-apple-intelligence-iphc28624b81/ios",
+      "type": "vendor"
     },
     {
-      "label": "Kaspersky — Apple Intelligence is refreshingly straightforward to disable",
-      "url": "https://www.kaspersky.com/blog/how-to-switch-off-ai/55383/",
+      "label": "The Verge — How to turn off Apple Intelligence on your iPhone",
+      "url": "https://www.theverge.com/24340563/apple-intelligence-ios-iphone-disable-how-to",
       "type": "press"
     }
   ],

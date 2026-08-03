@@ -21,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const entry = getEntry(slug);
+  const entry = await getEntry(slug);
   if (!entry) return {};
   const v = verdictMeta[entry.verdict];
   const title = `Can I turn off ${entry.app} ${entry.feature}? — ${v.label}`;
@@ -37,13 +37,14 @@ export async function generateMetadata({
 
 export default async function EntryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const entry = getEntry(slug);
+  const entry = await getEntry(slug);
   if (!entry) notFound();
 
   const v = verdictMeta[entry.verdict];
   const cat = categoryMeta(entry.category);
   const stale = isStale(entry.lastVerified, site.staleAfterDays);
-  const related = rankedEntries().filter(
+  const allRanked = await rankedEntries();
+  const related = allRanked.filter(
     (e) => e.slug !== entry.slug && (entry.relatedSlugs.includes(e.slug) || e.vendor === entry.vendor),
   );
 

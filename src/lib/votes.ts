@@ -1,48 +1,102 @@
-import fs from "node:fs";
-import path from "node:path";
-
-/**
- * Vote store — deliberately swappable.
- *
- * v0: a JSON file on disk. Works locally and on any single-node host (VPS, Fly, Render).
- * v1: swap the two functions below for Turso/libSQL or Upstash Redis when the site goes
- *     on a serverless host. Nothing else in the codebase touches the storage.
- */
+import { createClient, type Client } from "@libsql/client";
 
 export type VoteKind = "works" | "changed";
 export type VoteCounts = Record<string, { works: number; changed: number }>;
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const VOTES_FILE = path.join(DATA_DIR, "votes.json");
+let _client: Client | null = null;
 
-function read(): VoteCounts {
-  try {
-    return JSON.parse(fs.readFileSync(VOTES_FILE, "utf8")) as VoteCounts;
-  } catch {
-    return {};
+function client(): Client {
+  if (!_client) {
+    const url = process.env.TURSO_DATABASE_URL;
+    const authToken = process.env.TURSO_AUTH_TOKEN;
+    if (!url) throw new Error("TURSO_DATABASE_URL is not set");
+    _client = createClient({ url, authToken });
   }
+  return _client;
 }
 
-function write(counts: VoteCounts): void {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-  fs.writeFileSync(VOTES_FILE, JSON.stringify(counts, null, 2));
+let _initialized = false;
+
+async function ensureSchema(): Promise<void> {
+  if (_initialized) return;
+  const db = client();
+  await db.execute(
+    `CREATE TABLE IF NOT EXISTS votes (
+      slug TEXT NOT NULL,
+      kind TEXT NOT NULL CHECK (kind IN ('works', 'changed')),
+      ip TEXT NOT NULL DEFAULT '',
+      voter_id TEXT NOT NULL DEFAULT '',
+      created_at INTEGER NOT NULL DEFAULT (unixepoch()),
+      PRIMARY KEY (slug, kind, ip, voter_id)
+    )`
+  );
+  await db.execute(`CREATE INDEX IF NOT EXISTS idx_votes_slug ON votes(slug)`);
+  await db.execute(`CREATE INDEX IF NOT EXISTS idx_votes_created ON votes(created_at)`);
+  _initialized = true;
 }
 
-export function getVoteCounts(): VoteCounts {
-  return read();
+export async function getVoteCounts(): Promise<VoteCounts> {
+  await ensureSchema();
+  const rs = await client().execute(
+    `SELECT slug,
+       SUM(CASE WHEN kind = 'works' THEN 1 ELSE 0 END) AS works,
+       SUM(CASE WHEN kind = 'changed' THEN 1 ELSE 0 END) AS changed
+     FROM votes GROUP BY slug`
+  );
+  const counts: VoteCounts = {};
+  for (const row of rs.rows) {
+    counts[row.slug as string] = {
+      works: Number(row.works ?? 0),
+      changed: Number(row.changed ?? 0),
+    };
+  }
+  return counts;
 }
 
-export function getVotes(slug: string): { works: number; changed: number } {
-  return read()[slug] ?? { works: 0, changed: 0 };
+export async function getVotes(slug: string): Promise<{ works: number; changed: number }> {
+  await ensureSchema();
+  const rs = await client().execute({
+    sql: `SELECT
+            SUM(CASE WHEN kind = 'works' THEN 1 ELSE 0 END) AS works,
+            SUM(CASE WHEN kind = 'changed' THEN 1 ELSE 0 END) AS changed
+          FROM votes WHERE slug = ?`,
+    args: [slug],
+  });
+  const row = rs.rows[0];
+  return {
+    works: Number(row?.works ?? 0),
+    changed: Number(row?.changed ?? 0),
+  };
 }
 
-export function castVote(slug: string, kind: VoteKind): { works: number; changed: number } {
-  const counts = read();
-  const current = counts[slug] ?? { works: 0, changed: 0 };
-  current[kind] += 1;
-  counts[slug] = current;
-  write(counts);
-  return current;
+export async function castVote(
+  slug: string,
+  kind: VoteKind,
+  opts?: { ip?: string; voterId?: string }
+): Promise<{ works: number; changed: number }> {
+  await ensureSchema();
+  const ip = opts?.ip ?? "";
+  const voterId = opts?.voterId ?? "";
+
+  await client().execute({
+    sql: `INSERT OR IGNORE INTO votes (slug, kind, ip, voter_id) VALUES (?, ?, ?, ?)`,
+    args: [slug, kind, ip, voterId],
+  });
+
+  return getVotes(slug);
+}
+
+export async function hasVoted(
+  slug: string,
+  ip: string,
+  voterId: string
+): Promise<boolean> {
+  await ensureSchema();
+  const rs = await client().execute({
+    sql: `SELECT 1 FROM votes WHERE slug = ? AND (ip = ? OR voter_id = ?) LIMIT 1`,
+    args: [slug, ip, voterId],
+  });
+  return rs.rows.length > 0;
 }
 
 /** 5+ "it changed" in the last cycle puts an entry in the review queue (see docs/EDITORIAL.md). */

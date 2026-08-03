@@ -18,7 +18,7 @@ export async function generateMetadata({
   params: Promise<{ vendor: string }>;
 }): Promise<Metadata> {
   const { vendor } = await params;
-  const entries = entriesByVendor(vendor);
+  const entries = await entriesByVendor(vendor);
   if (!entries.length) return {};
   return {
     title: `Every AI feature ${entries[0].vendor} forced on you`,
@@ -28,7 +28,7 @@ export async function generateMetadata({
 
 export default async function VendorPage({ params }: { params: Promise<{ vendor: string }> }) {
   const { vendor } = await params;
-  const entries = entriesByVendor(vendor);
+  const entries = await entriesByVendor(vendor);
   if (!entries.length) notFound();
 
   const never = entries.filter((e) => e.verdict === "never").length;

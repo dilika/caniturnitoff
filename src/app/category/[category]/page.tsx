@@ -34,7 +34,7 @@ export default async function CategoryPage({
   const { category } = await params;
   const meta = categoryMeta(category);
   if (!meta) notFound();
-  const entries = entriesByCategory(category);
+  const entries = await entriesByCategory(category);
 
   return (
     <>

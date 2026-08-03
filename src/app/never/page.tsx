@@ -10,8 +10,9 @@ export const metadata: Metadata = {
     "Every tracked AI feature that a normal user cannot turn off. No setting, no flag, no registry key. It is the product now.",
 };
 
-export default function NeverPage() {
-  const entries = rankedEntries().filter((e) => e.verdict === "never");
+export default async function NeverPage() {
+  const allRanked = await rankedEntries();
+  const entries = allRanked.filter((e) => e.verdict === "never");
   return (
     <>
       <h1 className="text-2xl font-semibold tracking-tight text-never">the wall of shame</h1>

@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     "Public dataset stats: how many AI features can be turned off, how many are on by default, and who the worst offenders are.",
 };
 
-export default function StatsPage() {
-  const stats = siteStats();
-  const entries = rankedEntries();
+export default async function StatsPage() {
+  const stats = await siteStats();
+  const entries = await rankedEntries();
 
   const byVendor = Object.entries(
     entries.reduce<Record<string, { total: number; never: number }>>((acc, e) => {

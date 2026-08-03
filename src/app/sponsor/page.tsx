@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   description: `${site.sponsorSlots} sponsor slots on the off-switch database. Flat monthly price, no impressions games, no ad network.`,
 };
 
-export default function SponsorPage() {
+export default async function SponsorPage() {
   const taken = loadSponsors().length;
   const open = Math.max(0, site.sponsorSlots - taken);
-  const stats = siteStats();
+  const stats = await siteStats();
 
   return (
     <article className="max-w-2xl space-y-6">
