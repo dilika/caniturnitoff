@@ -107,8 +107,18 @@ export default function MethodologyPage() {
         <h2 className="text-xs uppercase tracking-widest text-dim">votes</h2>
         <p className="mt-2 text-sm text-muted">
           &quot;still works&quot; / &quot;it changed&quot; are review signals only. they never
-          auto-flip a verdict. 5+ &quot;it changed&quot; votes in 30 days puts an entry in the review
-          queue with a disputed badge.
+          auto-flip a verdict. 5+ &quot;it changed&quot; votes puts an entry in the review
+          queue with a disputed badge. voting is rate-limited and deduplicated by IP and
+          browser fingerprint to keep the signal honest.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xs uppercase tracking-widest text-dim">report an error</h2>
+        <p className="mt-2 text-sm text-muted">
+          every entry page has a &quot;report an error&quot; link that opens a pre-filled GitHub
+          issue. wrong steps, changed settings, or a verdict you disagree with — flag it and we
+          re-verify within 7 days.
         </p>
       </section>
 

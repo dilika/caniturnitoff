@@ -245,6 +245,14 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
         <a href={site.repo} className="chip hover:border-acid/60 hover:text-acid">
           fix this entry ↗
         </a>
+        <a
+          href={`${site.repo}/issues/new?title=Error+report:+${entry.slug}&body=What%27s+wrong+with+this+entry%3F%0A%0AEntry:+${entry.app}+-+${entry.feature}%0ASlug:+${entry.slug}%0A%0ADescribe+the+error:`}
+          target="_blank"
+          rel="noopener"
+          className="chip hover:border-never/60 hover:text-never"
+        >
+          ⚠ report an error ↗
+        </a>
       </div>
 
       {related.length > 0 && (
