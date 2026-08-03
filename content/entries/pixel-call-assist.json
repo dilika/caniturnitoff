@@ -1,0 +1,37 @@
+{
+  "slug": "pixel-call-assist",
+  "app": "Pixel Phone app",
+  "feature": "Call Assist (screening, transcription)",
+  "vendor": "Google",
+  "category": "phones",
+  "platforms": ["android"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 2,
+  "summary": "Each Call Assist feature has its own toggle in the Phone app's settings. Genuinely disableable — the AI listening to your calls is opt-out, one switch at a time.",
+  "steps": [
+    {
+      "platform": "android (pixel)",
+      "kind": "setting",
+      "path": "Phone app → ☰ → Settings → Call Assist → open each feature and toggle it off (Call Screen, Hold for Me, live transcription)"
+    }
+  ],
+  "collateral": [
+    "spam call screening stops, so unknown numbers ring through",
+    "Hold for Me and call transcripts are gone"
+  ],
+  "whyTheyDidIt": "Call features are the most defensible AI on the phone — which is also why Google is comfortable letting you turn them off.",
+  "sources": [
+    {
+      "label": "Gadget Hacks — turn off Call Assist features in the Phone app",
+      "url": "https://android.gadgethacks.com/how-to/how-to-disable-google-ai-on-android-16-steps-that-work/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["android-system-intelligence", "pixel-screenshots-ai"]
+}

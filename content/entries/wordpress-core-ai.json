@@ -1,0 +1,48 @@
+{
+  "slug": "wordpress-core-ai",
+  "app": "WordPress 7.0",
+  "feature": "Core AI features (wp_supports_ai)",
+  "vendor": "WordPress",
+  "category": "dev-tools",
+  "platforms": ["self-hosted"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 2,
+  "summary": "WordPress core gates all AI behind a single function, so it can be killed site-wide with one constant in wp-config.php — before any plugin or theme code runs. This is the only entry on this site where the vendor shipped a real kill switch on purpose.",
+  "steps": [
+    {
+      "platform": "self-hosted",
+      "kind": "config",
+      "path": "Add the constant to wp-config.php. It runs before plugins, so nothing can override it:",
+      "code": "define( 'WP_AI_SUPPORT', false );"
+    },
+    {
+      "platform": "self-hosted",
+      "kind": "config",
+      "path": "Or filter it programmatically in a small must-use plugin:",
+      "code": "add_filter( 'wp_supports_ai', '__return_false' );"
+    },
+    {
+      "platform": "self-hosted",
+      "kind": "setting",
+      "path": "UI route: install \"Turn Off AI Features\" → Settings → General → check \"Turn off AI features on this site\" (also exposes wp ai disable / enable / status over WP-CLI)."
+    }
+  ],
+  "collateral": [
+    "only affects features that call wp_supports_ai() — a plugin doing its own API calls is unaffected"
+  ],
+  "whyTheyDidIt": "Core shipped AI with a documented gate, which is what a healthy default looks like. Individual plugins still have to be audited separately.",
+  "sources": [
+    {
+      "label": "WordPress.org — Turn Off AI Features plugin (documents WP_AI_SUPPORT and the wp_supports_ai filter)",
+      "url": "https://eu.wordpress.org/plugins/turn-off-ai-features/",
+      "type": "vendor"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": []
+}

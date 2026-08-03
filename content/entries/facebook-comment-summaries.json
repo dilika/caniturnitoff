@@ -1,0 +1,37 @@
+{
+  "slug": "facebook-comment-summaries",
+  "app": "Facebook",
+  "feature": "AI comment summaries",
+  "vendor": "Meta",
+  "category": "social",
+  "platforms": ["android", "ios", "web"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 3,
+  "summary": "You can stop Meta from AI-summarising the comments on your own posts. You cannot stop it anywhere else, and the setting is four levels deep in a menu nobody visits.",
+  "steps": [
+    {
+      "platform": "android / ios",
+      "kind": "setting",
+      "path": "Menu (bottom right) → Settings & Privacy → Audiences and Visibility → Posts → turn off \"Allow Comment Summaries on Your Posts\""
+    }
+  ],
+  "collateral": [
+    "only applies to your own posts — summaries still appear on everyone else's",
+    "no equivalent control for feed-level AI features"
+  ],
+  "whyTheyDidIt": "A narrow opt-out is enough to answer press questions without denting the feature's reach.",
+  "sources": [
+    {
+      "label": "Consumer Reports — disable AI comment summaries on the Facebook app",
+      "url": "https://www.consumerreports.org/electronics/artificial-intelligence/turn-off-ai-tools-gemini-apple-intelligence-copilot-and-more-a1156421356/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["whatsapp-meta-ai", "instagram-meta-ai"]
+}

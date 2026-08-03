@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #070807;
+  --color-panel: #0e100e;
+  --color-panel-2: #141714;
+  --color-line: #1e221e;
+  --color-line-2: #2a2f2a;
+  --color-fg: #e8ebe6;
+  --color-muted: #8b948a;
+  --color-dim: #5f665e;
+
+  --color-acid: #c6ff3d;
+  --color-off: #4ade80;
+  --color-buried: #fbbf24;
+  --color-never: #f8717a;
+  --color-flag: #f0a5ff;
+
+  --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", "Menlo", "Consolas",
+    "Liberation Mono", monospace;
+
+  --radius-card: 2px;
+}
+
+@layer base {
+  html {
+    background: var(--color-ink);
+    color-scheme: dark;
+  }
+
+  body {
+    background:
+      radial-gradient(60rem 40rem at 50% -10rem, #10140f 0%, transparent 70%),
+      var(--color-ink);
+    color: var(--color-fg);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-acid);
+    color: #0b0d0a;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility container-tight {
+  width: 100%;
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@utility hairline {
+  border-bottom: 1px solid var(--color-line);
+}
+
+@utility panel {
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+}
+
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--color-line-2);
+  padding: 0.1rem 0.45rem;
+  font-size: 11px;
+  line-height: 1.5;
+  text-transform: lowercase;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+@utility scanline {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 3px,
+    rgba(255, 255, 255, 0.015) 3px 4px
+  );
+}

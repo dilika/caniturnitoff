@@ -1,0 +1,47 @@
+{
+  "slug": "whatsapp-meta-ai",
+  "app": "WhatsApp",
+  "feature": "Meta AI assistant",
+  "vendor": "Meta",
+  "category": "social",
+  "platforms": ["android", "ios", "web"],
+  "verdict": "never",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 5,
+  "summary": "Meta ships no switch to remove Meta AI from WhatsApp. You can avoid tapping it and you can mute or archive the chat, but the assistant and its entry points stay in the app.",
+  "steps": [
+    {
+      "platform": "android / ios",
+      "kind": "setting",
+      "path": "There is no disable option. Mitigations only: never tap the Meta AI circle, archive/mute the Meta AI chat, and avoid @-mentioning it in group chats."
+    },
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Gemini/assistant integrations are separate: in the Gemini app → profile → Apps → turn off the WhatsApp connection (this only stops Gemini, not Meta AI)."
+    }
+  ],
+  "collateral": [],
+  "regionNotes": "EU rollout arrived later and with more disclosure requirements, but still without a user-facing off switch.",
+  "whyTheyDidIt": "Meta AI's usage numbers come from being placed inside apps with billions of daily users — an off switch would collapse them.",
+  "sources": [
+    {
+      "label": "Consumer Reports — Meta gives no way to disable its AI tools altogether",
+      "url": "https://www.consumerreports.org/electronics/artificial-intelligence/turn-off-ai-tools-gemini-apple-intelligence-copilot-and-more-a1156421356/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Signal",
+      "url": "https://signal.org",
+      "why": "nonprofit, end-to-end encrypted, no assistant bolted into the chat list",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["instagram-meta-ai", "facebook-comment-summaries"]
+}

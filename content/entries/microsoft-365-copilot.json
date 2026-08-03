@@ -1,0 +1,49 @@
+{
+  "slug": "microsoft-365-copilot",
+  "app": "Microsoft 365 (Word, Excel, PowerPoint)",
+  "feature": "Copilot in the apps",
+  "vendor": "Microsoft",
+  "category": "work-suite",
+  "platforms": ["windows", "macos"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 2,
+  "summary": "There is a real per-app checkbox in Options → Copilot. The catch: it is per application, so you repeat it in Word, Excel and PowerPoint — and on a work machine an admin may have locked it.",
+  "steps": [
+    {
+      "platform": "windows / macos",
+      "kind": "setting",
+      "path": "Open the app → File → Options → Copilot → uncheck \"Enable Copilot\". Repeat per app."
+    },
+    {
+      "platform": "managed devices",
+      "kind": "admin",
+      "path": "On a work computer the option may be greyed out — only the tenant admin can disable Copilot for the OU."
+    }
+  ],
+  "collateral": [
+    "you have to do it once per Office application",
+    "the checkbox can be re-shown after major channel updates"
+  ],
+  "whyTheyDidIt": "Copilot is the justification for the M365 price increases; the default has to be on.",
+  "sources": [
+    {
+      "label": "Consumer Reports — disable Copilot in Microsoft 365 apps",
+      "url": "https://www.consumerreports.org/electronics/artificial-intelligence/turn-off-ai-tools-gemini-apple-intelligence-copilot-and-more-a1156421356/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "LibreOffice",
+      "url": "https://www.libreoffice.org",
+      "why": "no assistant, no cloud, no subscription",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["windows-11-copilot", "edge-copilot-mode"]
+}

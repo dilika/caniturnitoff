@@ -1,0 +1,67 @@
+{
+  "slug": "chrome-gemini",
+  "app": "Google Chrome",
+  "feature": "Gemini in Chrome & on-device AI",
+  "vendor": "Google",
+  "category": "browsers",
+  "platforms": ["macos", "windows", "linux", "android"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": true,
+  "enterpriseOnly": false,
+  "difficulty": 4,
+  "summary": "Part of it is a normal setting; the rest lives behind chrome://flags, where you have to hunt a dozen separate AI entries. New Chrome releases keep adding flags that default to enabled.",
+  "steps": [
+    {
+      "platform": "desktop",
+      "kind": "setting",
+      "path": "Chrome → ⋮ → Settings → System → toggle off \"On device AI\"; then Settings → AI Innovations → Gemini in Chrome → toggle everything off"
+    },
+    {
+      "platform": "desktop",
+      "kind": "flag",
+      "path": "Open chrome://flags, search \"AI\" then \"Gemini\", and set each match to Disabled. Minimum set:",
+      "code": "AI Mode Omnibox entrypoint → Disabled\nAI Entrypoint Disabled on User Input → Disabled\nOmnibox Allow AI Mode Matches → Disabled\nPrompt API for Gemini Nano → Disabled\nPrompt API for Gemini Nano with Multimodal Input → Disabled"
+    },
+    {
+      "platform": "windows / macos (managed)",
+      "kind": "config",
+      "path": "Fleet-wide: use Chrome Enterprise policies (GenAI* policies) instead of flags — flags reset on channel updates."
+    }
+  ],
+  "collateral": [
+    "flags are per-profile and can be reset by an update",
+    "each Chrome release adds new AI flags you have to re-audit",
+    "disabling on-device AI also disables non-Gemini local ML features"
+  ],
+  "whyTheyDidIt": "The browser is where Google most needs Gemini to become a habit before someone else's assistant does.",
+  "sources": [
+    {
+      "label": "Kaspersky — disabling AI features in Chrome via chrome://flags",
+      "url": "https://www.kaspersky.com/blog/how-to-switch-off-ai/55383/",
+      "type": "press"
+    },
+    {
+      "label": "Tuta — disable Google Gemini in Chrome",
+      "url": "https://tuta.com/blog/how-to-disable-gemini-on-android",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Firefox",
+      "url": "https://www.mozilla.org/firefox/",
+      "why": "single \"block AI enhancements\" toggle in settings",
+      "affiliate": false
+    },
+    {
+      "name": "LibreWolf",
+      "url": "https://librewolf.net",
+      "why": "Firefox fork with AI and telemetry stripped by default",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["firefox-ai-features", "edge-copilot-mode"]
+}

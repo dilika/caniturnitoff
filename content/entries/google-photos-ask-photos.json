@@ -1,0 +1,49 @@
+{
+  "slug": "google-photos-ask-photos",
+  "app": "Google Photos",
+  "feature": "Ask Photos & Gemini features",
+  "vendor": "Google",
+  "category": "media",
+  "platforms": ["android", "ios", "web"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 1,
+  "summary": "One toggle inside the app kills Ask Photos, Gemini-powered memories and the AI search that replaced normal search. It is a genuine off switch — you just have to know it exists.",
+  "steps": [
+    {
+      "platform": "android / ios",
+      "kind": "setting",
+      "path": "Google Photos → profile icon → Photos settings → Preferences → Gemini features in Photos → toggle off \"Use Gemini in Photos\""
+    }
+  ],
+  "collateral": [
+    "natural-language photo search goes back to keyword search",
+    "auto-generated memories and remix suggestions stop"
+  ],
+  "whyTheyDidIt": "Your photo library is the most personal training and engagement surface Google has on your phone.",
+  "sources": [
+    {
+      "label": "Gadget Hacks — disabling Gemini in Google Photos",
+      "url": "https://android.gadgethacks.com/how-to/how-to-disable-google-ai-on-android-16-steps-that-work/",
+      "type": "press"
+    },
+    {
+      "label": "Yahoo Tech — Google AI is creeping into every app on your phone",
+      "url": "https://tech.yahoo.com/ai/gemini/articles/google-ai-creeping-every-app-171723112.html",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Immich",
+      "url": "https://immich.app",
+      "why": "self-hosted photo library, AI features run on your own box",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["android-system-intelligence", "pixel-screenshots-ai"]
+}

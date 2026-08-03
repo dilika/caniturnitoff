@@ -1,0 +1,53 @@
+{
+  "slug": "windows-11-copilot",
+  "app": "Windows 11",
+  "feature": "Copilot",
+  "vendor": "Microsoft",
+  "category": "os",
+  "platforms": ["windows"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": true,
+  "enterpriseOnly": false,
+  "difficulty": 4,
+  "summary": "You can uninstall the Copilot app and remove it from the taskbar, but users widely report it silently reinstalling itself. The durable fix is a registry policy, not a settings toggle.",
+  "steps": [
+    {
+      "platform": "windows",
+      "kind": "setting",
+      "path": "Settings → Apps → Installed apps → Copilot → Uninstall (if listed). Also right-click the taskbar → Taskbar settings → hide Copilot."
+    },
+    {
+      "platform": "windows",
+      "kind": "registry",
+      "path": "Block the silent reinstall and the Copilot surface via policy keys (requires admin; back up first):",
+      "code": "reg add \"HKCU\\Software\\Policies\\Microsoft\\Windows\\WindowsCopilot\" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f\nreg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager\" /v SilentInstalledAppsEnabled /t REG_DWORD /d 0 /f"
+    },
+    {
+      "platform": "windows (managed)",
+      "kind": "admin",
+      "path": "Enterprise: use the equivalent GPO / Intune policy instead of per-user registry edits."
+    }
+  ],
+  "collateral": [
+    "registry edits are unsupported for consumers and can be reverted by feature updates",
+    "Copilot has been reported to come back after cumulative updates — re-check monthly"
+  ],
+  "whyTheyDidIt": "Copilot usage in Windows is the headline number Microsoft reports; a default off switch would flatten it.",
+  "sources": [
+    {
+      "label": "Consumer Reports — disabling Copilot in Windows 11",
+      "url": "https://www.consumerreports.org/electronics/artificial-intelligence/turn-off-ai-tools-gemini-apple-intelligence-copilot-and-more-a1156421356/",
+      "type": "press"
+    },
+    {
+      "label": "Kaspersky — Copilot reinstalling itself, SilentInstalledAppsEnabled / TurnOffWindowsCopilot",
+      "url": "https://www.kaspersky.com/blog/how-to-switch-off-ai/55383/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["microsoft-365-copilot", "edge-copilot-mode"]
+}

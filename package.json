@@ -1,0 +1,30 @@
+{
+  "name": "can-i-turn-it-off",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Which AI features you can actually turn off — and which ones are now part of the product you already paid for.",
+  "scripts": {
+    "dev": "next dev --port 3210",
+    "build": "next build",
+    "start": "next start --port 3210",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "validate:content": "tsx scripts/validate-content.ts"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "packageManager": "pnpm@10.33.0"
+}

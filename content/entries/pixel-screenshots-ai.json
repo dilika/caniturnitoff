@@ -1,0 +1,39 @@
+{
+  "slug": "pixel-screenshots-ai",
+  "app": "Pixel Screenshots",
+  "feature": "On-device AI screenshot indexing",
+  "vendor": "Google",
+  "category": "phones",
+  "platforms": ["android"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 2,
+  "summary": "One toggle in the Screenshots app stops the on-device model from reading and indexing every screenshot you take, and you can delete the summaries it already generated.",
+  "steps": [
+    {
+      "platform": "android (pixel 9+)",
+      "kind": "setting",
+      "path": "Pixel Screenshots app → Settings → toggle off \"Search your screenshots with on-device AI\" → accept the offer to delete existing AI summaries and metadata"
+    },
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Nuclear option: Settings → Apps → Pixel Screenshots → Disable"
+    }
+  ],
+  "collateral": ["screenshot search goes back to filenames and dates"],
+  "whyTheyDidIt": "Screenshots are a dense, personal corpus that makes on-device AI look magical in demos.",
+  "sources": [
+    {
+      "label": "Gadget Hacks — turn off AI processing in the Screenshots app",
+      "url": "https://android.gadgethacks.com/how-to/how-to-disable-google-ai-on-android-16-steps-that-work/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["android-system-intelligence"]
+}

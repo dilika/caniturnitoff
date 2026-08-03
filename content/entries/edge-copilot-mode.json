@@ -1,0 +1,54 @@
+{
+  "slug": "edge-copilot-mode",
+  "app": "Microsoft Edge",
+  "feature": "Copilot Mode & AI surfaces",
+  "vendor": "Microsoft",
+  "category": "browsers",
+  "platforms": ["windows", "macos"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": true,
+  "enterpriseOnly": false,
+  "difficulty": 4,
+  "summary": "Copilot is spread across settings pages, a sidebar config, per-app settings and edge://flags. There is no single switch, and users report it reappearing after updates.",
+  "steps": [
+    {
+      "platform": "desktop",
+      "kind": "setting",
+      "path": "edge://settings/appearance/copilotAndSidebar → turn off Copilot in the sidebar, then check the Copilot section under \"App-specific settings\""
+    },
+    {
+      "platform": "desktop",
+      "kind": "flag",
+      "path": "Open edge://flags, search \"AI\" and \"Copilot\", disable at least: Enable Compose (AI writing) on the web, Edge Copilot Mode, Edge History AI"
+    },
+    {
+      "platform": "windows",
+      "kind": "registry",
+      "path": "Managed devices: use the Edge policies (HubsSidebarEnabled, CopilotCDPPageContext, etc.) rather than flags."
+    }
+  ],
+  "collateral": [
+    "flags reset across channel updates",
+    "some Copilot entry points return after major Edge releases"
+  ],
+  "whyTheyDidIt": "Edge is Microsoft's main distribution channel for Copilot on the desktop.",
+  "sources": [
+    {
+      "label": "Kaspersky — how to disable AI features in Microsoft apps",
+      "url": "https://www.kaspersky.com/blog/how-to-switch-off-ai/55383/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Firefox",
+      "url": "https://www.mozilla.org/firefox/",
+      "why": "one toggle blocks all AI enhancements",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["windows-11-copilot", "microsoft-365-copilot"]
+}

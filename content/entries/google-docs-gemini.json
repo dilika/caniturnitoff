@@ -1,0 +1,61 @@
+{
+  "slug": "google-docs-gemini",
+  "app": "Google Docs, Slides & Drive",
+  "feature": "Gemini side panel & Help me write",
+  "vendor": "Google",
+  "category": "email-docs",
+  "platforms": ["web"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 4,
+  "summary": "There is no per-app switch inside Docs or Slides. The only lever is the account-level Workspace smart features toggle, which is buried in Gmail's settings and covers Docs, Drive and Slides at once.",
+  "steps": [
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Gmail → See all settings → Google Workspace smart features → toggle off \"Smart features in Google Workspace\" (this is the control for Docs, Slides and Drive) → Save"
+    },
+    {
+      "platform": "web",
+      "kind": "admin",
+      "path": "Workspace tenants: Admin console → Generative AI / Gemini apps → turn off for the OU. End users cannot do this themselves."
+    }
+  ],
+  "collateral": [
+    "the control is not in the product it affects — most users never find it",
+    "some AI entry points in Docs and Slides have been reported to persist after opting out"
+  ],
+  "regionNotes": "Off by default in the EEA, UK, Switzerland and Japan; on by default elsewhere.",
+  "whyTheyDidIt": "Gemini in Workspace is the headline feature of the paid tier — the settings live where a churning user won't look.",
+  "sources": [
+    {
+      "label": "Kaspersky — Google smart features are an all-or-nothing deal",
+      "url": "https://www.kaspersky.com/blog/how-to-switch-off-ai/55383/",
+      "type": "press"
+    },
+    {
+      "label": "Gadget Hacks — how to disable Google AI: 16 steps that work",
+      "url": "https://android.gadgethacks.com/how-to/how-to-disable-google-ai-on-android-16-steps-that-work/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Obsidian",
+      "url": "https://obsidian.md",
+      "why": "local markdown files, AI only if you install a plugin",
+      "affiliate": false
+    },
+    {
+      "name": "LibreOffice",
+      "url": "https://www.libreoffice.org",
+      "why": "no cloud, no assistant, no telemetry",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["gmail-smart-features"]
+}

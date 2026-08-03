@@ -1,0 +1,42 @@
+{
+  "slug": "firefox-ai-features",
+  "app": "Mozilla Firefox",
+  "feature": "AI chatbot, link previews & AI enhancements",
+  "vendor": "Mozilla",
+  "category": "browsers",
+  "platforms": ["macos", "windows", "linux"],
+  "verdict": "off",
+  "onByDefault": false,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 1,
+  "summary": "Since Firefox 148 there is a dedicated AI Controls section with a single \"Block AI enhancements\" switch. For a scorched-earth version, flip the browser.ml prefs in about:config.",
+  "steps": [
+    {
+      "platform": "desktop",
+      "kind": "setting",
+      "path": "Settings → AI Controls → \"Block AI enhancements\""
+    },
+    {
+      "platform": "desktop",
+      "kind": "config",
+      "path": "about:config → set browser.ml.enabled to false. Community reports say the sub-prefs are worth setting too:",
+      "code": "browser.ml.enabled = false\nbrowser.ml.chat.enabled = false\nbrowser.ml.linkPreview.enabled = false\nbrowser.ml.pageAssist.enabled = false\nbrowser.ml.smartAssist.enabled = false\nbrowser.urlbar.quicksuggest.mlEnabled = false\nbrowser.tabs.groups.smart.enabled = false"
+    }
+  ],
+  "collateral": [
+    "local translation and smart tab grouping go away with the scorched-earth prefs"
+  ],
+  "whyTheyDidIt": "Mozilla shipped AI features but kept a real off switch — this is what the baseline should look like everywhere.",
+  "sources": [
+    {
+      "label": "Kaspersky — Firefox AI Controls and browser.ml prefs",
+      "url": "https://www.kaspersky.com/blog/how-to-switch-off-ai/55383/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["chrome-gemini", "edge-copilot-mode"]
+}

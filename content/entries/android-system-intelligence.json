@@ -1,0 +1,61 @@
+{
+  "slug": "android-system-intelligence",
+  "app": "Android / Pixel",
+  "feature": "On-device AI system services (AICore, Android System Intelligence, Private Compute Services)",
+  "vendor": "Google",
+  "category": "phones",
+  "platforms": ["android"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 5,
+  "summary": "There is no single switch for AI on Android. The system services that power it can only be disabled from the app list, and doing so breaks features that have nothing to do with AI.",
+  "steps": [
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Settings → Apps → See all apps → disable each of: Android System Intelligence, Private Compute Services, AICore"
+    },
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Gemini app → profile → Apps → turn off Google Workspace, Messages, Phone, WhatsApp connections. Then profile → Gemini Apps Activity → Turn off (and delete activity)."
+    },
+    {
+      "platform": "android",
+      "kind": "cli",
+      "path": "System components you cannot uninstall can be disabled over ADB (advanced, reversible, may break OTA features):",
+      "code": "adb shell pm disable-user --user 0 com.google.android.as\nadb shell pm disable-user --user 0 com.google.android.aicore"
+    }
+  ],
+  "collateral": [
+    "smart replies, live caption improvements and screenshot search stop working",
+    "real-time call features on Pixel degrade",
+    "Gemini Apps Activity 'off' still keeps chats for 72 hours"
+  ],
+  "whyTheyDidIt": "AI on Android is implemented as platform services, not app features — which conveniently means it cannot be switched off like one.",
+  "sources": [
+    {
+      "label": "Gadget Hacks — how to disable Google AI on Android: 16 steps that work",
+      "url": "https://android.gadgethacks.com/how-to/how-to-disable-google-ai-on-android-16-steps-that-work/",
+      "type": "press"
+    },
+    {
+      "label": "Tuta — how to disable Gemini on Android",
+      "url": "https://tuta.com/blog/how-to-disable-gemini-on-android",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "GrapheneOS",
+      "url": "https://grapheneos.org",
+      "why": "de-Googled Android; the AI services simply are not there",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["pixel-screenshots-ai", "google-messages-gemini", "apple-intelligence"]
+}

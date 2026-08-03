@@ -1,0 +1,34 @@
+{
+  "slug": "instagram-meta-ai",
+  "app": "Instagram",
+  "feature": "Meta AI in search & DMs",
+  "vendor": "Meta",
+  "category": "social",
+  "platforms": ["android", "ios", "web"],
+  "verdict": "never",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 5,
+  "summary": "Meta AI replaced the search entry point and sits in DMs. There is no setting to remove it — the only lever is not using it.",
+  "steps": [
+    {
+      "platform": "android / ios",
+      "kind": "setting",
+      "path": "No off switch exists. Mitigation: use search normally and ignore the AI prompt; do not open the Meta AI thread in DMs."
+    }
+  ],
+  "collateral": [],
+  "whyTheyDidIt": "Same playbook as WhatsApp: distribution first, consent never.",
+  "sources": [
+    {
+      "label": "Consumer Reports — no way to disable Meta's AI altogether",
+      "url": "https://www.consumerreports.org/electronics/artificial-intelligence/turn-off-ai-tools-gemini-apple-intelligence-copilot-and-more-a1156421356/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["whatsapp-meta-ai", "facebook-comment-summaries"]
+}

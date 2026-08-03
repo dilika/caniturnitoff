@@ -1,0 +1,67 @@
+{
+  "slug": "gmail-smart-features",
+  "app": "Gmail",
+  "feature": "Smart features & Gemini",
+  "vendor": "Google",
+  "category": "email-docs",
+  "platforms": ["web", "android", "ios"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 3,
+  "summary": "You can turn Gemini out of Gmail, but only through the \"smart features\" bundle — an all-or-nothing switch that also kills conveniences that have nothing to do with AI. It lives in two separate places and both must be off.",
+  "steps": [
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Gmail → gear icon → See all settings → General → uncheck \"Turn on smart features in Gmail, Chat and Meet\""
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Same page → Google Workspace smart features → Manage settings → toggle off both \"Smart features in Google Workspace\" and \"Smart features in other Google products\" → Save"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Optional: turn off Smart Compose, Smart Compose personalization and Smart Reply individually if you keep smart features on."
+    }
+  ],
+  "collateral": [
+    "spelling and grammar check goes away with the bundle",
+    "auto-added calendar events from email invitations stop working",
+    "package tracking and Wallet/Maps conveniences stop working"
+  ],
+  "regionNotes": "Smart features are off by default in the EEA, UK, Switzerland and Japan. Everywhere else you were opted in.",
+  "whyTheyDidIt": "Bundling the AI with genuinely useful non-AI conveniences makes opting out expensive on purpose.",
+  "sources": [
+    {
+      "label": "Kaspersky — how to disable unwanted AI assistants and features",
+      "url": "https://www.kaspersky.com/blog/how-to-switch-off-ai/55383/",
+      "type": "press"
+    },
+    {
+      "label": "Tuta — how to disable Gemini on Android, Gmail, Chrome, Photos",
+      "url": "https://tuta.com/blog/how-to-disable-gemini-on-android",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Fastmail",
+      "url": "https://www.fastmail.com",
+      "why": "paid email, no AI features forced into the inbox",
+      "affiliate": false
+    },
+    {
+      "name": "Proton Mail",
+      "url": "https://proton.me/mail",
+      "why": "AI writing assistant is opt-in and can be self-hosted-local",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["google-docs-gemini", "google-search-ai-overviews"]
+}

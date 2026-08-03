@@ -1,0 +1,35 @@
+{
+  "slug": "android-circle-to-search",
+  "app": "Android",
+  "feature": "Circle to Search",
+  "vendor": "Google",
+  "category": "phones",
+  "platforms": ["android"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 3,
+  "summary": "The gesture that hijacks a long-press of the home/nav bar can be turned off, but the setting is not where you would look — it hides in search or under Display, depending on the OEM skin.",
+  "steps": [
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Settings → search \"Circle to Search\" (may live under Display or under the Google app settings) → toggle off"
+    }
+  ],
+  "collateral": ["long-press home/nav gesture goes back to the assistant or does nothing"],
+  "regionNotes": "Location of the toggle varies by OEM skin and Android version; on some builds it only appears after a Google app update.",
+  "whyTheyDidIt": "Binding an AI surface to an existing system gesture guarantees accidental usage numbers.",
+  "sources": [
+    {
+      "label": "Gadget Hacks — disable Circle to Search",
+      "url": "https://android.gadgethacks.com/how-to/how-to-disable-google-ai-on-android-16-steps-that-work/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["android-system-intelligence", "google-search-ai-overviews"]
+}

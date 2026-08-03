@@ -1,0 +1,62 @@
+{
+  "slug": "google-search-ai-overviews",
+  "app": "Google Search",
+  "feature": "AI Overviews",
+  "vendor": "Google",
+  "category": "search",
+  "platforms": ["web", "android", "ios"],
+  "verdict": "never",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 5,
+  "summary": "Google does not let you turn AI Overviews off. The closest thing to an opt-out is routing around it: the Web filter tab, the udm=14 trick, or a different search engine.",
+  "steps": [
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Run your search → below the search bar pick the \"Web\" tab (sometimes hidden under \"More\"). Results-page-only, resets on every new search."
+    },
+    {
+      "platform": "web",
+      "kind": "config",
+      "path": "Force web-only results by appending Google's undocumented udm=14 parameter, or set a custom search engine in your browser that does it for you.",
+      "code": "https://www.google.com/search?q=%s&udm=14"
+    },
+    {
+      "platform": "any",
+      "kind": "setting",
+      "path": "Switch default search engine. DuckDuckGo lets you toggle AI answers on and off before searching."
+    }
+  ],
+  "collateral": [
+    "the Web tab has to be re-selected for every search",
+    "udm=14 is undocumented and can be removed by Google at any time"
+  ],
+  "regionNotes": "Rollout and available filter tabs differ by country; the absence of an off switch does not.",
+  "whyTheyDidIt": "AI Overviews keep the answer on Google's page instead of sending the click to the site that wrote it — the whole point is that you cannot leave.",
+  "sources": [
+    {
+      "label": "Consumer Reports — how to turn off AI tools (Gemini, Apple Intelligence, Copilot)",
+      "url": "https://www.consumerreports.org/electronics/artificial-intelligence/turn-off-ai-tools-gemini-apple-intelligence-copilot-and-more-a1156421356/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "DuckDuckGo",
+      "url": "https://duckduckgo.com",
+      "why": "AI answers are a toggle you control, not a default",
+      "affiliate": false
+    },
+    {
+      "name": "Kagi",
+      "url": "https://kagi.com",
+      "why": "paid search, AI is opt-in per query",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["gmail-smart-features", "chrome-gemini"]
+}

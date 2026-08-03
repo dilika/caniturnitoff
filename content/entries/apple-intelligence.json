@@ -1,0 +1,53 @@
+{
+  "slug": "apple-intelligence",
+  "app": "iOS, iPadOS & macOS",
+  "feature": "Apple Intelligence",
+  "vendor": "Apple",
+  "category": "os",
+  "platforms": ["ios", "ipados", "macos"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 1,
+  "summary": "One master toggle in Settings, and turning it off can free up several gigabytes of on-device model storage. Individual pieces (notification summaries, writing tools, image generation) can also be killed separately.",
+  "steps": [
+    {
+      "platform": "ios / ipados / macos",
+      "kind": "setting",
+      "path": "Settings → Apple Intelligence & Siri → toggle Apple Intelligence off"
+    },
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "Notification summaries only: Settings → Notifications → Prioritize Notifications → off, then Summarize Notifications → off"
+    },
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "Writing tools & image generation only: Settings → Screen Time → Content & Privacy Restrictions → on → Intelligence & Siri → turn off Image Creation and Writing Tools"
+    }
+  ],
+  "collateral": [
+    "notification summaries, writing tools, Genmoji and Siri's LLM answers all go",
+    "duplicate/overlapping Intelligence settings exist in several places — the master toggle is the one that matters"
+  ],
+  "regionNotes": "Availability depends on region and OS/Siri language; in some regions the feature is not offered at all.",
+  "whyTheyDidIt": "Apple ties Intelligence to hardware upgrades, so it ships enabled on every capable device.",
+  "sources": [
+    {
+      "label": "Consumer Reports — how to turn off Apple Intelligence",
+      "url": "https://www.consumerreports.org/electronics/artificial-intelligence/turn-off-ai-tools-gemini-apple-intelligence-copilot-and-more-a1156421356/",
+      "type": "press"
+    },
+    {
+      "label": "Kaspersky — Apple Intelligence is refreshingly straightforward to disable",
+      "url": "https://www.kaspersky.com/blog/how-to-switch-off-ai/55383/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["android-system-intelligence"]
+}

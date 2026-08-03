@@ -1,0 +1,56 @@
+{
+  "slug": "google-messages-gemini",
+  "app": "Google Messages",
+  "feature": "Gemini button, suggested replies & AI message summaries",
+  "vendor": "Google",
+  "category": "phones",
+  "platforms": ["android"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 2,
+  "summary": "The Gemini button, smart replies and AI notification summaries each have their own toggle — but they live in three different menus, so most people only ever find one.",
+  "steps": [
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Messages → profile icon → Messages settings → Gemini in Messages → toggle off \"Show Gemini button\""
+    },
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Messages settings → Chats → Suggestions & smart replies → off (also kills AI sticker suggestions)"
+    },
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Messages settings → Notifications → AI message summaries → off"
+    }
+  ],
+  "collateral": ["smart reply chips and sticker suggestions go away"],
+  "whyTheyDidIt": "Messaging is the highest-frequency app on the phone — the cheapest place to build a Gemini habit.",
+  "sources": [
+    {
+      "label": "Yahoo Tech — how to disable Gemini in Google Messages",
+      "url": "https://tech.yahoo.com/ai/gemini/articles/google-ai-creeping-every-app-171723112.html",
+      "type": "press"
+    },
+    {
+      "label": "Kaspersky — suggested replies and AI message summaries",
+      "url": "https://www.kaspersky.com/blog/how-to-switch-off-ai/55383/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-03",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Signal",
+      "url": "https://signal.org",
+      "why": "no assistant, no summaries, no suggestions",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["android-system-intelligence", "whatsapp-meta-ai"]
+}
