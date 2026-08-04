@@ -36,21 +36,25 @@ async function ensureSchema(): Promise<void> {
 }
 
 export async function getVoteCounts(): Promise<VoteCounts> {
-  await ensureSchema();
-  const rs = await client().execute(
-    `SELECT slug,
+  try {
+    await ensureSchema();
+    const rs = await client().execute(
+      `SELECT slug,
        SUM(CASE WHEN kind = 'works' THEN 1 ELSE 0 END) AS works,
        SUM(CASE WHEN kind = 'changed' THEN 1 ELSE 0 END) AS changed
      FROM votes GROUP BY slug`
-  );
-  const counts: VoteCounts = {};
-  for (const row of rs.rows) {
-    counts[row.slug as string] = {
-      works: Number(row.works ?? 0),
-      changed: Number(row.changed ?? 0),
-    };
+    );
+    const counts: VoteCounts = {};
+    for (const row of rs.rows) {
+      counts[row.slug as string] = {
+        works: Number(row.works ?? 0),
+        changed: Number(row.changed ?? 0),
+      };
+    }
+    return counts;
+  } catch {
+    return {};
   }
-  return counts;
 }
 
 export async function getVotes(slug: string): Promise<{ works: number; changed: number }> {
