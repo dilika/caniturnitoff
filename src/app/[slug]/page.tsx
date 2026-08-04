@@ -299,6 +299,36 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: `Can I turn off ${entry.app} ${entry.feature}?`,
+            description: entry.summary,
+            url: `${site.url}/${entry.slug}`,
+            dateModified: entry.lastVerified,
+            author: { "@type": "Organization", name: site.name },
+            publisher: { "@type": "Organization", name: site.name },
+            mainEntityOfPage: `${site.url}/${entry.slug}`,
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+              { "@type": "ListItem", position: 2, name: entry.vendor, item: `${site.url}/vendor/${vendorSlug(entry.vendor)}` },
+              { "@type": "ListItem", position: 3, name: `${entry.app} — ${entry.feature}`, item: `${site.url}/${entry.slug}` },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }
