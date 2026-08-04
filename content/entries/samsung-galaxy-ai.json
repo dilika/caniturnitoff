@@ -1,0 +1,60 @@
+{
+  "slug": "samsung-galaxy-ai",
+  "app": "Samsung Galaxy",
+  "feature": "Galaxy AI suite",
+  "vendor": "Samsung",
+  "category": "os",
+  "platforms": ["android"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 2,
+  "summary": "Samsung bundles Galaxy AI features (Live Translate, Summarize, Circle to Search, Photo Assist) behind a single settings screen with per-feature toggles. You can turn them all off or pick and choose.",
+  "steps": [
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Settings → Galaxy AI (or Settings → Advanced features → Advanced Intelligence on some devices)"
+    },
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Turn off each sub-menu toggle: Call assist, Browsing assist, Interpreter, Summarization, etc."
+    },
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Some features also have toggles inside their respective apps (Camera, Gallery, Notes, Phone, Samsung Messages, Samsung Health)"
+    }
+  ],
+  "collateral": [
+    "some AI features like Circle to Search are also controlled by Google — disabling Galaxy AI may not fully disable those",
+    "certain system-level AI integrations may remain active even after toggling off all visible settings"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "Samsung wants Galaxy AI as a device-selling differentiator, especially for the S24/S25 line.",
+  "sources": [
+    {
+      "label": "Samsung Support — How to use Galaxy AI features",
+      "url": "https://www.samsung.com/us/support/answer/ANS10003336/",
+      "type": "vendor"
+    },
+    {
+      "label": "ModemGuides — How to Turn Off AI Features on Windows, Samsung, Google, Meta, and Alexa",
+      "url": "https://www.modemguides.com/blogs/modemguides-blog/how-to-turn-off-ai-features-on-windows-samsung-google-meta-and-alexa",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "GrapheneOS",
+      "url": "https://grapheneos.org",
+      "why": "de-Googled Android with no AI suite",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["android-circle-to-search", "android-system-intelligence", "pixel-call-assist"]
+}

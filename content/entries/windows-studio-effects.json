@@ -1,0 +1,48 @@
+{
+  "slug": "windows-studio-effects",
+  "app": "Windows 11",
+  "feature": "Studio Effects (camera/audio AI)",
+  "vendor": "Microsoft",
+  "category": "os",
+  "platforms": ["windows"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 2,
+  "summary": "Windows Studio Effects applies AI-driven automatic framing, background blur, eye contact correction, portrait lighting, and voice focus during video calls. It is on by default on Copilot+ PCs but can be turned off from camera settings.",
+  "steps": [
+    {
+      "platform": "windows",
+      "kind": "setting",
+      "path": "Settings → Bluetooth & devices → Cameras → Connected cameras → select your camera"
+    },
+    {
+      "platform": "windows",
+      "kind": "setting",
+      "path": "Click Edit next to Advanced camera options → toggle off 'Use Windows Studio Effects'"
+    }
+  ],
+  "collateral": [
+    "disabling Studio Effects means no automatic background blur or noise cancellation in video calls",
+    "some apps like Teams have their own background blur that will still work independently"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "Microsoft wants Copilot+ PC hardware capabilities to be visible to users during every call.",
+  "sources": [
+    {
+      "label": "Microsoft Support — Windows Studio Effects",
+      "url": "https://support.microsoft.com/en-us/windows/windows-studio-effects-4a4e5b8a-9c2f-4f1e-b7d3",
+      "type": "vendor"
+    },
+    {
+      "label": "MakeUseOf — I disabled all 10 AI features in Windows 11",
+      "url": "https://www.makeuseof.com/disable-ai-features-in-windows-11/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["windows-recall", "windows-11-copilot"]
+}

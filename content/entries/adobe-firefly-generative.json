@@ -1,0 +1,72 @@
+{
+  "slug": "adobe-firefly-generative",
+  "app": "Adobe Creative Cloud",
+  "feature": "Firefly generative AI",
+  "vendor": "Adobe",
+  "category": "creative",
+  "platforms": ["windows", "mac", "ipad"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 3,
+  "summary": "Adobe has integrated Firefly generative AI (Generative Fill, Generative Expand, AI text effects) across Photoshop, Illustrator, and Express. You can hide AI panels and disable the Contextual Task Bar, but some AI buttons remain in the interface with no off switch. You can also opt out of Adobe using your content for AI training.",
+  "steps": [
+    {
+      "platform": "mac",
+      "kind": "setting",
+      "path": "Photoshop → Settings → General → uncheck 'Contextual Task Bar' to hide AI shortcuts"
+    },
+    {
+      "platform": "mac",
+      "kind": "setting",
+      "path": "Window menu → uncheck any AI-related panels (e.g. Generative Fill panel)"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Adobe Account → Privacy → Generative AI → uncheck 'I give Adobe permission to use my images and associated data to train Adobe's generative AI models'"
+    },
+    {
+      "platform": "mac",
+      "kind": "setting",
+      "path": "Edit → Preferences → Product Improvement → deselect AI training opt-in"
+    }
+  ],
+  "collateral": [
+    "some AI buttons remain in the UI even after hiding panels — there is no master off switch",
+    "disabling cloud-based AI services may break online collaboration features",
+    "opting out of AI training does not prevent AI features from appearing in the app"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "Adobe is positioning Firefly as a core Creative Cloud selling point, not an optional add-on.",
+  "sources": [
+    {
+      "label": "Adobe — Generative AI privacy and content credentials",
+      "url": "https://www.adobe.com/trust/privacy/generative-ai.html",
+      "type": "vendor"
+    },
+    {
+      "label": "Tech Tips Now — Turn Off Generative AI in Adobe: A Complete Guide",
+      "url": "https://tech-tips-now.com/turn-off-generative-ai-in-adobe-a-complete-guide/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Affinity Photo",
+      "url": "https://affinity.serif.com/en-us/photo/",
+      "why": "no generative AI, one-time purchase, professional photo editor",
+      "affiliate": false
+    },
+    {
+      "name": "GIMP",
+      "url": "https://www.gimp.org",
+      "why": "free, open-source, no AI features forced into the UI",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": []
+}

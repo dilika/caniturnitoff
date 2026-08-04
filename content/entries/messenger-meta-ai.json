@@ -1,0 +1,61 @@
+{
+  "slug": "messenger-meta-ai",
+  "app": "Messenger",
+  "feature": "Meta AI chat",
+  "vendor": "Meta",
+  "category": "social",
+  "platforms": ["android", "ios", "web"],
+  "verdict": "never",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 5,
+  "summary": "Meta AI is embedded in Messenger and cannot be removed. You can mute the AI chat and enable Advanced Chat Privacy to block it from being summoned in individual conversations, but there is no global off switch.",
+  "steps": [
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "Open the Meta AI chat → tap (i) info button → Mute → choose 'Until I change it'"
+    },
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Open any chat → tap person/group name at top → Advanced Chat Privacy → toggle on (blocks @Meta AI in that chat)"
+    },
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "Optional: delete the Meta AI chat so it disappears from your inbox (it can still be re-summoned)"
+    }
+  ],
+  "collateral": [
+    "muting only silences notifications — the AI chat still exists and can be opened",
+    "Advanced Chat Privacy must be enabled per-conversation, not globally",
+    "any group member can still summon Meta AI unless you enable Advanced Chat Privacy in that specific group"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "Meta is using every owned surface to drive AI engagement and training data collection.",
+  "sources": [
+    {
+      "label": "Meta Help Center — About Meta AI on Messenger",
+      "url": "https://www.meta.ai/help/messenger/",
+      "type": "vendor"
+    },
+    {
+      "label": "ModemGuides — How to Turn Off AI Features on Windows, Samsung, Google, Meta, and Alexa",
+      "url": "https://www.modemguides.com/blogs/modemguides-blog/how-to-turn-off-ai-features-on-windows-samsung-google-meta-and-alexa",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Signal",
+      "url": "https://signal.org",
+      "why": "no AI chatbot, end-to-end encrypted, no training on your messages",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["whatsapp-meta-ai", "instagram-meta-ai", "facebook-comment-summaries"]
+}

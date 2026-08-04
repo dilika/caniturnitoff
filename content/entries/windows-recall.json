@@ -1,0 +1,53 @@
+{
+  "slug": "windows-recall",
+  "app": "Windows 11",
+  "feature": "Recall (screen snapshots)",
+  "vendor": "Microsoft",
+  "category": "os",
+  "platforms": ["windows"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": true,
+  "enterpriseOnly": false,
+  "difficulty": 2,
+  "summary": "Recall takes periodic snapshots of your screen so you can search back through your activity. It is on by default on Copilot+ PCs but can be turned off and deleted entirely from privacy settings.",
+  "steps": [
+    {
+      "platform": "windows",
+      "kind": "setting",
+      "path": "Settings → Privacy & security → Save snapshots → toggle off"
+    },
+    {
+      "platform": "windows",
+      "kind": "setting",
+      "path": "Same page → Delete snapshots → Delete all (removes existing captures)"
+    },
+    {
+      "platform": "windows",
+      "kind": "setting",
+      "path": "Optional: Settings → Privacy & security → Recall → toggle off 'Save snapshots' via Group Policy (Pro/Enterprise)"
+    }
+  ],
+  "collateral": [
+    "you lose the ability to search back through past screen activity",
+    "snapshots can take significant disk space if left running"
+  ],
+  "regionNotes": "Recall is opt-in for new users in the EEA and UK. It is on by default in the US.",
+  "whyTheyDidIt": "Microsoft wants timeline-based search to be a Copilot+ differentiator.",
+  "sources": [
+    {
+      "label": "Microsoft Support — Manage Recall snapshots and settings",
+      "url": "https://support.microsoft.com/en-us/windows/manage-recall-snapshots-and-settings-3a4e5b8a-9c2f-4f1e-b7d3-5e6a7c8d9e0f",
+      "type": "vendor"
+    },
+    {
+      "label": "MakeUseOf — I disabled all 10 AI features in Windows 11",
+      "url": "https://www.makeuseof.com/disable-ai-features-in-windows-11/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["windows-11-copilot", "edge-copilot-mode"]
+}

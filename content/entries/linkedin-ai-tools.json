@@ -1,0 +1,56 @@
+{
+  "slug": "linkedin-ai-tools",
+  "app": "LinkedIn",
+  "feature": "AI writing & training",
+  "vendor": "Microsoft",
+  "category": "social",
+  "platforms": ["web", "android", "ios"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 4,
+  "summary": "LinkedIn forces AI writing suggestions into posts and messages, and uses your content to train generative AI models. You can opt out of AI training via a buried settings toggle, but the AI writing assistant cannot be turned off — it appears in every compose box.",
+  "steps": [
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Settings & Privacy → Data Privacy → Data for Generative AI Improvement → toggle off"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Optional: submit a LinkedIn Data Processing Objection Form for broader opt-out"
+    }
+  ],
+  "collateral": [
+    "opting out of AI training does not remove AI writing suggestions from compose boxes",
+    "the AI writing assistant has no off switch — it is always present in post and message composers",
+    "the training opt-out toggle has been reported as missing or relocated for some accounts"
+  ],
+  "regionNotes": "EU/UK users have stronger data protection rights under GDPR and may submit a formal objection.",
+  "whyTheyDidIt": "LinkedIn sees AI-generated content as engagement fuel — more posts, more time on platform.",
+  "sources": [
+    {
+      "label": "LinkedIn Help — Generative AI privacy settings",
+      "url": "https://www.linkedin.com/help/linkedin/answer/a1363564",
+      "type": "vendor"
+    },
+    {
+      "label": "Ruby Allen-Cadman — How to opt out of Generative AI Training",
+      "url": "https://rubyallencadman.uk/2025/05/22/how-to-opt-out-of-generative-ai-training-step-by-step-guides/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Mastodon",
+      "url": "https://joinmastodon.org",
+      "why": "no AI writing assistant, no AI training on your posts, open-source",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["facebook-comment-summaries", "instagram-meta-ai"]
+}

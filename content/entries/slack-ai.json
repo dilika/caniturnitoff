@@ -1,0 +1,50 @@
+{
+  "slug": "slack-ai",
+  "app": "Slack",
+  "feature": "Slack AI (summaries & search)",
+  "vendor": "Salesforce",
+  "category": "work-suite",
+  "platforms": ["web", "mac", "windows", "android", "ios"],
+  "verdict": "off",
+  "onByDefault": false,
+  "comesBack": false,
+  "enterpriseOnly": true,
+  "difficulty": 2,
+  "summary": "Slack AI offers channel summaries, search answers, and thread recaps. It is a paid add-on that must be purchased and enabled by workspace admins. If your workspace has it, admins can disable it from settings. Individual members cannot toggle it — it is controlled at the org level.",
+  "steps": [
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Workspace admin: Settings & administration → Settings → AI → toggle off 'Slack AI'"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "If not an admin: there is no individual opt-out. Ask your admin to disable it or limit which channels it can access."
+    }
+  ],
+  "collateral": [
+    "only available on paid Slack plans — free workspaces do not have Slack AI",
+    "admins can restrict AI to specific channels rather than disabling entirely"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "Salesforce is monetizing AI as a premium add-on per seat.",
+  "sources": [
+    {
+      "label": "Slack Help — Slack AI overview",
+      "url": "https://slack.com/help/articles/203630518-Slack-AI-overview",
+      "type": "vendor"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Zulip",
+      "url": "https://zulip.com",
+      "why": "open-source team chat, no AI features forced in",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["notion-ai", "microsoft-365-copilot"]
+}

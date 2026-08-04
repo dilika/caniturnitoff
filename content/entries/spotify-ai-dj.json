@@ -1,0 +1,52 @@
+{
+  "slug": "spotify-ai-dj",
+  "app": "Spotify",
+  "feature": "AI DJ & AI playlists",
+  "vendor": "Spotify",
+  "category": "creative",
+  "platforms": ["android", "ios", "web"],
+  "verdict": "off",
+  "onByDefault": false,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 1,
+  "summary": "Spotify's AI DJ and AI-generated playlists are opt-in features that appear as buttons in the app. They are not forced into your feed — you simply don't tap them. There is no settings toggle needed; the features stay dormant unless you actively engage.",
+  "steps": [
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Home feed → simply do not tap the AI DJ card or AI Playlist button"
+    },
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "If AI DJ is playing: tap the three dots on the DJ card → Hide (removes from feed for that session)"
+    }
+  ],
+  "collateral": [],
+  "regionNotes": "",
+  "whyTheyDidIt": "Spotify is testing AI curation as a Premium differentiator but keeping it opt-in to avoid backlash.",
+  "sources": [
+    {
+      "label": "Spotify Support — AI DJ",
+      "url": "https://support.spotify.com/us/article/ai-dj/",
+      "type": "vendor"
+    },
+    {
+      "label": "TweakTown — Spotify now lets everyone turn off videos across music and podcasts",
+      "url": "https://www.tweaktown.com/news/110947/spotify-now-lets-everyone-turn-off-videos-across-music-and-podcasts/index.html",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Apple Music",
+      "url": "https://www.apple.com/apple-music/",
+      "why": "no AI DJ, human-curated playlists",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": []
+}

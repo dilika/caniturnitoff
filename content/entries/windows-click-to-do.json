@@ -1,0 +1,40 @@
+{
+  "slug": "windows-click-to-do",
+  "app": "Windows 11",
+  "feature": "Click To Do (AI suggestions)",
+  "vendor": "Microsoft",
+  "category": "os",
+  "platforms": ["windows"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 1,
+  "summary": "Click To Do is a Copilot+ PC feature that suggests AI-powered actions whenever you select text or an image on screen. It can be turned off with a single toggle in privacy settings.",
+  "steps": [
+    {
+      "platform": "windows",
+      "kind": "setting",
+      "path": "Settings → Privacy & security → Click To Do → toggle off"
+    }
+  ],
+  "collateral": [],
+  "regionNotes": "Click To Do is exclusive to Copilot+ PCs with NPUs. Not present on standard Windows 11 installs.",
+  "whyTheyDidIt": "Microsoft wants AI actions to feel ambient and always-available on Copilot+ hardware.",
+  "sources": [
+    {
+      "label": "Microsoft Support — Click To Do on Copilot+ PCs",
+      "url": "https://support.microsoft.com/en-us/windows/click-to-do-on-copilot-pcs",
+      "type": "vendor"
+    },
+    {
+      "label": "MakeUseOf — I disabled all 10 AI features in Windows 11",
+      "url": "https://www.makeuseof.com/disable-ai-features-in-windows-11/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["windows-recall", "windows-11-copilot", "windows-studio-effects"]
+}

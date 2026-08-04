@@ -1,0 +1,57 @@
+{
+  "slug": "gmail-ai-compose",
+  "app": "Gmail",
+  "feature": "Smart Compose & Smart Reply",
+  "vendor": "Google",
+  "category": "email-docs",
+  "platforms": ["web", "android", "ios"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 1,
+  "summary": "Gmail's Smart Compose predicts text as you type and Smart Reply suggests short responses. Both can be turned off individually from Gmail settings without disabling other features.",
+  "steps": [
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Gmail → gear icon → See all settings → General → scroll to Smart Compose → select 'Smart Compose off'"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Same page → Smart Compose personalization → uncheck to stop Google using your writing style for predictions"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Same page → Smart Reply → select 'Smart Reply off'"
+    }
+  ],
+  "collateral": [],
+  "regionNotes": "Smart Compose and Smart Reply are off by default in the EEA, UK, Switzerland and Japan.",
+  "whyTheyDidIt": "Google wants AI to feel indispensable in everyday email, normalizing AI-assisted writing.",
+  "sources": [
+    {
+      "label": "Google Help — Use Smart Compose in Gmail",
+      "url": "https://support.google.com/mail/answer/7228345",
+      "type": "vendor"
+    },
+    {
+      "label": "Consumer Reports — How to Turn Off AI Tools",
+      "url": "https://www.consumerreports.org/electronics/artificial-intelligence/turn-off-ai-tools-gemini-apple-intelligence-copilot-and-more-a1156421356/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Fastmail",
+      "url": "https://www.fastmail.com",
+      "why": "no AI compose or reply, paid email with privacy focus",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["gmail-smart-features", "google-docs-gemini"]
+}

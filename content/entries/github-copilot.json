@@ -1,0 +1,52 @@
+{
+  "slug": "github-copilot",
+  "app": "GitHub",
+  "feature": "Copilot code suggestions",
+  "vendor": "Microsoft",
+  "category": "dev-tools",
+  "platforms": ["web", "mac", "windows", "linux"],
+  "verdict": "off",
+  "onByDefault": false,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 1,
+  "summary": "GitHub Copilot suggests code as you type in supported editors. It is a paid add-on (or free for students/open-source maintainers) and is opt-in — you must install the extension and enable it. Disabling it is a single toggle in editor settings.",
+  "steps": [
+    {
+      "platform": "mac",
+      "kind": "setting",
+      "path": "VS Code: Settings → Extensions → GitHub Copilot → uncheck 'Enable' (or click the Copilot icon in the status bar → Disable)"
+    },
+    {
+      "platform": "mac",
+      "kind": "setting",
+      "path": "JetBrains: Settings → Tools → GitHub Copilot → uncheck 'Enable Copilot'"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "GitHub.com → Settings → Copilot → toggle off or cancel subscription"
+    }
+  ],
+  "collateral": [],
+  "regionNotes": "",
+  "whyTheyDidIt": "Copilot is a revenue stream for GitHub and a developer ecosystem lock-in for Microsoft.",
+  "sources": [
+    {
+      "label": "GitHub Docs — Configuring GitHub Copilot in your environment",
+      "url": "https://docs.github.com/en/copilot/configuring-github-copilot",
+      "type": "vendor"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Continue.dev",
+      "url": "https://continue.dev",
+      "why": "open-source AI coding assistant you control — local models, no telemetry",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["microsoft-365-copilot", "edge-copilot-mode"]
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "windows-ai-actions",
+  "app": "Windows 11",
+  "feature": "AI Actions in context menu",
+  "vendor": "Microsoft",
+  "category": "os",
+  "platforms": ["windows"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 2,
+  "summary": "Right-clicking a file in Windows 11 now shows AI shortcuts — remove background in Photos, visual search with Bing, AI actions in Teams and Paint. These can be turned off individually from the Apps settings.",
+  "steps": [
+    {
+      "platform": "windows",
+      "kind": "setting",
+      "path": "Settings → Apps → Actions → turn off each AI action toggle individually"
+    }
+  ],
+  "collateral": [
+    "toggles are per-action, not a single master switch — you must disable each one"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "Microsoft wants AI to feel like a natural part of the file workflow, not a separate app.",
+  "sources": [
+    {
+      "label": "MakeUseOf — I disabled all 10 AI features in Windows 11",
+      "url": "https://www.makeuseof.com/disable-ai-features-in-windows-11/",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [],
+  "relatedSlugs": ["windows-11-copilot", "windows-recall", "windows-click-to-do"]
+}

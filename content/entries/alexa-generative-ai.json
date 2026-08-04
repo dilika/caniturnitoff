@@ -1,0 +1,60 @@
+{
+  "slug": "alexa-generative-ai",
+  "app": "Amazon Alexa",
+  "feature": "Generative AI responses",
+  "vendor": "Amazon",
+  "category": "os",
+  "platforms": ["android", "ios", "web"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 4,
+  "summary": "Amazon has upgraded Alexa with generative AI responses that are longer, more conversational, and harder to interrupt. There is no dedicated off switch for the generative AI upgrade — you can only adjust speech rate or opt out of specific features like summarized news.",
+  "steps": [
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "Alexa app → More → Settings → Alexa Responses → adjust speech rate to faster"
+    },
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "Alexa app → More → Settings → Brief Mode → toggle on (shorter responses, but does not disable generative AI)"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Amazon account → Manage Your Content and Devices → Alexa → opt out of specific AI features where available"
+    }
+  ],
+  "collateral": [
+    "there is no master toggle to revert Alexa to pre-generative-AI behavior",
+    "Brief Mode shortens responses but does not disable the underlying generative model"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "Amazon is repositioning Alexa as an AI assistant competitor to ChatGPT and Google Gemini.",
+  "sources": [
+    {
+      "label": "Amazon Alexa Help — Alexa responses and settings",
+      "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=G7U4Y5J3NQDQXQ7F",
+      "type": "vendor"
+    },
+    {
+      "label": "ModemGuides — How to Turn Off AI Features",
+      "url": "https://www.modemguides.com/blogs/modemguides-blog/how-to-turn-off-ai-features-on-windows-samsung-google-meta-and-alexa",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Home Assistant",
+      "url": "https://www.home-assistant.io",
+      "why": "local, open-source home automation with no cloud AI",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["google-messages-gemini", "android-system-intelligence"]
+}

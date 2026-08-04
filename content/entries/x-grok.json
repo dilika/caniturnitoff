@@ -1,0 +1,61 @@
+{
+  "slug": "x-grok",
+  "app": "X (Twitter)",
+  "feature": "Grok AI",
+  "vendor": "xAI",
+  "category": "social",
+  "platforms": ["web", "android", "ios"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 3,
+  "summary": "X integrates Grok AI into the timeline with AI-generated trending summaries, 'Explain this post' buttons, and a Grok tab. You can mute the Grok account and hide the Grok button, but AI-generated trend summaries still appear in your feed with no way to fully disable them.",
+  "steps": [
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Settings → Accessibility, display, and languages → Content you see → Interests → search 'Grok' → uncheck all Grok-related interests"
+    },
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "Open Grok's profile → three dots → Mute (hides Grok posts from your timeline)"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Settings → Privacy and safety → Grok → uncheck 'Allow your posts as well as your interactions, inputs, and results with Grok to be used for training and fine-tuning'"
+    }
+  ],
+  "collateral": [
+    "muting Grok does not remove AI-generated trend summaries from the Explore tab",
+    "the Grok button remains in the UI even after muting the account"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "Elon Musk is using X's distribution to force-drive Grok adoption against OpenAI and Google.",
+  "sources": [
+    {
+      "label": "X Help Center — About Grok",
+      "url": "https://help.x.com/en/using-x/grok",
+      "type": "vendor"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Mastodon",
+      "url": "https://joinmastodon.org",
+      "why": "no AI in the timeline, no AI training on your posts",
+      "affiliate": false
+    },
+    {
+      "name": "Bluesky",
+      "url": "https://bsky.social",
+      "why": "no AI assistant forced into the feed, open protocol",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["facebook-comment-summaries", "instagram-meta-ai", "linkedin-ai-tools"]
+}

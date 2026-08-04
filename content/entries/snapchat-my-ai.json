@@ -1,0 +1,65 @@
+{
+  "slug": "snapchat-my-ai",
+  "app": "Snapchat",
+  "feature": "My AI chatbot",
+  "vendor": "Snap",
+  "category": "social",
+  "platforms": ["android", "ios"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 4,
+  "summary": "Snapchat pins My AI at the top of your chat list and gives it access to your Stories by default. You can unpin or delete it only if you pay for Snapchat+, and even then the bot cannot be fully removed — only hidden from your feed.",
+  "steps": [
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "Chat → press and hold My AI → Chat Settings → Clear from Chat Feed (Snapchat+ only)"
+    },
+    {
+      "platform": "android",
+      "kind": "setting",
+      "path": "Profile → Snapchat+ banner → toggle My AI from Pinned to Unpinned (Snapchat+ only)"
+    },
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "Settings → View My Story → Custom → select My AI → Block (stops it seeing your Stories)"
+    },
+    {
+      "platform": "ios",
+      "kind": "setting",
+      "path": "Settings → Clear My AI Data → Confirm (deletes saved conversations)"
+    }
+  ],
+  "collateral": [
+    "free users cannot remove My AI from chat feed at all",
+    "clearing data does not prevent future data collection — only deletes history"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "My AI is a paid differentiator — removing it is a Snapchat+ perk, not a user right.",
+  "sources": [
+    {
+      "label": "Snapchat Support — My AI",
+      "url": "https://help.snapchat.com/hc/en-us/articles/9483873583124-My-AI",
+      "type": "vendor"
+    },
+    {
+      "label": "Yahoo Tech — How to Get Rid of Snapchat's Pushy AI Feature",
+      "url": "https://tech.yahoo.com/social-media/articles/rid-snapchats-pushy-ai-feature-173531286.html",
+      "type": "press"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Signal",
+      "url": "https://signal.org",
+      "why": "no AI chatbot, no forced pins, end-to-end encrypted",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["instagram-meta-ai", "whatsapp-meta-ai", "facebook-comment-summaries"]
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "zoom-ai-companion",
+  "app": "Zoom",
+  "feature": "AI Companion",
+  "vendor": "Zoom",
+  "category": "work-suite",
+  "platforms": ["web", "mac", "windows", "android", "ios"],
+  "verdict": "off",
+  "onByDefault": true,
+  "comesBack": true,
+  "enterpriseOnly": false,
+  "difficulty": 2,
+  "summary": "Zoom AI Companion provides meeting summaries, smart recordings, and chat summaries. It is on by default for paid accounts but can be turned off by the account admin in settings. Individual users can disable it for their own meetings if the admin allows it.",
+  "steps": [
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Account admin: Admin → Account Management → Account Settings → AI Companion → toggle off"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Individual host: Settings → AI Companion → toggle off for your meetings"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Per-meeting: when scheduling → Meeting Options → uncheck AI Companion"
+    }
+  ],
+  "collateral": [
+    "disabling AI Companion removes meeting summaries and smart recording chapters",
+    "admins can lock the setting so individuals cannot re-enable it"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "Zoom is competing with Teams on AI features and uses meeting transcripts as training data.",
+  "sources": [
+    {
+      "label": "Zoom Support — Getting started with AI Companion",
+      "url": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0061222",
+      "type": "vendor"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Jitsi Meet",
+      "url": "https://jitsi.org",
+      "why": "open-source video conferencing, no AI features, self-hostable",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["slack-ai", "windows-studio-effects"]
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "notion-ai",
+  "app": "Notion",
+  "feature": "Notion AI writing assistant",
+  "vendor": "Notion",
+  "category": "work-suite",
+  "platforms": ["web", "mac", "windows", "android", "ios"],
+  "verdict": "buried",
+  "onByDefault": true,
+  "comesBack": false,
+  "enterpriseOnly": false,
+  "difficulty": 3,
+  "summary": "Notion AI inserts writing suggestions, summaries, and AI blocks into every page. There is no global off switch — you can only hide the AI buttons from the UI and ask workspace admins to disable AI for the team. Individual users on free plans have no way to remove it entirely.",
+  "steps": [
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "Settings → AI → toggle off 'AI in Notion' (workspace admins only — not available on free plans)"
+    },
+    {
+      "platform": "web",
+      "kind": "setting",
+      "path": "If not an admin: simply avoid pressing the AI button or pressing space on an empty line (which triggers AI suggestions)"
+    }
+  ],
+  "collateral": [
+    "free plan users cannot disable AI at all — only workspace admins can",
+    "the AI button remains visible in the UI even when disabled for the workspace"
+  ],
+  "regionNotes": "",
+  "whyTheyDidIt": "Notion is pivoting from a note-taking tool to an AI-first workspace platform.",
+  "sources": [
+    {
+      "label": "Notion Help — Manage AI features in your workspace",
+      "url": "https://www.notion.so/help/manage-ai-features-in-your-workspace",
+      "type": "vendor"
+    }
+  ],
+  "lastVerified": "2026-08-04",
+  "changelog": [],
+  "alternatives": [
+    {
+      "name": "Obsidian",
+      "url": "https://obsidian.md",
+      "why": "local-first, no AI forced into the editor, plugins are opt-in",
+      "affiliate": false
+    },
+    {
+      "name": "Logseq",
+      "url": "https://logseq.com",
+      "why": "open-source, local-first, no AI features by default",
+      "affiliate": false
+    }
+  ],
+  "relatedSlugs": ["microsoft-365-copilot", "google-docs-gemini"]
+}
