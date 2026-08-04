@@ -5,9 +5,11 @@ import { Flag, VerdictBadge } from "@/components/VerdictBadge";
 import { Newsletter } from "@/components/Shell";
 // import { SponsorGrid } from "@/components/Sponsors"; // sponsors paused until traffic justifies it
 import { VoteButtons } from "@/components/VoteButtons";
+import { CopyButton } from "@/components/CopyButton";
 import { getEntry, loadEntries, rankedEntries, vendorSlug } from "@/lib/content";
 import { categoryMeta, site } from "@/lib/site";
 import { daysSince, isStale, verdictMeta } from "@/lib/verdicts";
+import { isDisputedEntry } from "@/lib/changes";
 
 export const dynamicParams = false;
 
@@ -68,14 +70,14 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
     {
       q: `Is ${entry.feature} on by default in ${entry.app}?`,
       a: entry.onByDefault
-        ? "Yes. You were opted in without an explicit action."
+        ? "Yes. It is enabled by default."
         : "No. You have to enable it yourself.",
     },
   ].filter(Boolean) as { q: string; a: string }[];
 
   return (
     <>
-      <nav className="mb-4 flex flex-wrap items-center gap-2 text-[11px] text-dim">
+      <nav className="mb-4 flex flex-wrap items-center gap-2 text-sm text-dim">
         <Link href="/" className="hover:text-acid">
           all
         </Link>
@@ -87,11 +89,11 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
         <Link href={`/vendor/${vendorSlug(entry.vendor)}`} className="hover:text-acid">
           {entry.vendor}
         </Link>
-        <span className="ml-auto tabular-nums">#{entry.rank} on the offender list</span>
+        <span className="ml-auto tabular-nums">#{entry.rank} on the list</span>
       </nav>
 
       <header className="panel scanline p-6 text-center">
-        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
           Can I turn off {entry.app} — {entry.feature}?
         </h1>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
@@ -99,6 +101,12 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
           {entry.onByDefault && <Flag tone="warn">on by default</Flag>}
           {entry.comesBack && <Flag tone="flag">comes back after updates</Flag>}
           {entry.enterpriseOnly && <Flag>admin only</Flag>}
+          {isDisputedEntry(entry.votes) && (
+            <Flag tone="warn">
+              ⚠ {entry.votes.changed} say it changed
+            </Flag>
+          )}
+          {stale && <Flag tone="warn">stale — re-verification queued</Flag>}
           <span className="chip">difficulty {entry.difficulty}/5</span>
           <span className="chip">{entry.platforms.join(" · ")}</span>
         </div>
@@ -121,9 +129,13 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
                 </div>
                 <p className="mt-2 text-sm">{s.path}</p>
                 {s.code && (
-                  <pre className="mt-2 overflow-x-auto border border-line bg-ink p-2.5 text-xs text-acid">
-                    <code>{s.code}</code>
-                  </pre>
+                  <div className="mt-2 overflow-x-auto border border-line bg-ink p-2.5 text-xs text-acid">
+                    <div className="mb-1 flex items-center justify-between">
+                      <span className="text-[10px] uppercase tracking-wider text-dim">{s.kind}</span>
+                      <CopyButton text={s.code} />
+                    </div>
+                    <pre className="text-acid"><code>{s.code}</code></pre>
+                  </div>
                 )}
               </li>
             ))}
@@ -179,7 +191,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
               >
                 <div className="flex items-center gap-2 text-sm font-semibold">
                   {a.name}
-                  {a.affiliate && <span className="chip text-[9px]">affiliate</span>}
+                  {a.affiliate && <span className="chip text-[12px]">affiliate</span>}
                 </div>
                 <p className="mt-1 text-xs text-muted">{a.why}</p>
               </a>
@@ -222,7 +234,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
           ) : (
             <p className="mt-2 text-xs text-dim">no change since first verification.</p>
           )}
-          <p className="mt-3 border-t border-line pt-2 text-[10px] text-dim">
+          <p className="mt-3 border-t border-line pt-2 text-[12px] text-dim">
             vendor? contest this entry — corrections are published verbatim.{" "}
             <a href={`mailto:${site.contact}`} className="underline">
               {site.contact}

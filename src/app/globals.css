@@ -10,14 +10,16 @@
   --color-muted: var(--muted);
   --color-dim: var(--dim);
 
-  --color-acid: #4ade80;
+  --color-acid: #22d3ee;
   --color-off: #4ade80;
   --color-buried: #fbbf24;
   --color-never: #f8717a;
   --color-flag: #f0a5ff;
 
-  --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", "Menlo", "Consolas",
-    "Liberation Mono", monospace;
+  --font-sans: var(--space-grotesk), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--jb-mono), ui-monospace, "SFMono-Regular", "Menlo", "Consolas",
+    monospace;
 
   --radius-card: 3px;
 }
@@ -32,7 +34,7 @@
     --fg: #e9ede8;
     --muted: #8a938a;
     --dim: #5c645c;
-    --glow: rgba(74, 222, 128, 0.07);
+    --glow: rgba(34, 211, 238, 0.07);
     --veil: rgba(8, 10, 8, 0.88);
     --stripe: rgba(255, 255, 255, 0.014);
   }
@@ -46,7 +48,7 @@
     --fg: #151814;
     --muted: #58604f;
     --dim: #858d80;
-    --glow: rgba(34, 160, 90, 0.1);
+    --glow: rgba(34, 211, 238, 0.1);
     --veil: rgba(247, 248, 245, 0.88);
     --stripe: rgba(0, 0, 0, 0.014);
   }
@@ -65,15 +67,15 @@
       radial-gradient(70rem 45rem at 50% -12rem, var(--glow) 0%, transparent 70%),
       var(--bg);
     color: var(--fg);
-    font-family: var(--font-mono);
-    font-size: 14px;
-    line-height: 1.55;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
     background: var(--color-acid);
-    color: #06210f;
+    color: #042f2e;
   }
 
   a {
@@ -84,7 +86,14 @@
   h1,
   h2,
   h3 {
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  pre,
+  code,
+  kbd {
+    font-family: var(--font-mono);
   }
 }
 
@@ -92,9 +101,9 @@
 
 @utility container-tight {
   width: 100%;
-  max-width: 52rem;
+  max-width: 80rem;
   margin-inline: auto;
-  padding-inline: 1.25rem;
+  padding-inline: 1.75rem;
 }
 
 /* ---------- surfaces ---------- */
@@ -132,7 +141,7 @@
   border: 1px solid var(--line-2);
   border-radius: 999px;
   padding: 0.28rem 0.7rem;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.4;
   text-transform: lowercase;
   color: var(--muted);
@@ -147,7 +156,7 @@
 @utility pill-on {
   background: var(--color-acid);
   border-color: var(--color-acid);
-  color: #06210f;
+  color: #042f2e;
   font-weight: 600;
 }
 
@@ -158,7 +167,7 @@
   border: 1px solid var(--line-2);
   border-radius: 2px;
   padding: 0.12rem 0.4rem;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -177,8 +186,8 @@
 }
 
 @utility seg-btn {
-  padding: 0.22rem 0.55rem;
-  font-size: 10px;
+  padding: 0.3rem 0.7rem;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   color: var(--muted);
@@ -206,6 +215,7 @@
   border-radius: 3px;
   background: var(--panel);
   padding: 0.7rem 0.85rem;
+  font-family: var(--font-mono);
   transition: border-color 0.15s ease;
 }
 
@@ -235,10 +245,11 @@
   justify-content: center;
   min-width: 2rem;
   padding: 0.28rem 0.15rem;
-  border: 1px solid rgba(74, 222, 128, 0.35);
+  border: 1px solid rgba(34, 211, 238, 0.35);
   border-radius: 3px;
-  background: rgba(74, 222, 128, 0.08);
+  background: rgba(34, 211, 238, 0.08);
   color: var(--color-acid);
+  font-family: var(--font-mono);
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1;
@@ -249,7 +260,7 @@
 
 @utility thead-cell {
   padding: 0.5rem 0.75rem;
-  font-size: 9.5px;
+  font-size: 11px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.11em;

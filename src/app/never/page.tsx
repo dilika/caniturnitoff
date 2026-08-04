@@ -6,9 +6,9 @@ import { rankedEntries } from "@/lib/content";
 import { toExplorerEntry } from "@/lib/entry-view";
 
 export const metadata: Metadata = {
-  title: "The wall of shame — AI features with no off switch",
+  title: "AI features with no off switch",
   description:
-    "Every tracked AI feature that a normal user cannot turn off. No setting, no flag, no registry key. It is the product now.",
+    "Every tracked AI feature that a normal user cannot turn off. No setting, no flag, no registry key. It is part of the product.",
 };
 
 export default async function NeverPage() {
@@ -16,15 +16,15 @@ export default async function NeverPage() {
   const entries = allRanked.filter((e) => e.verdict === "never");
   return (
     <>
-      <PageHeader title="the wall of shame" tone="never">
-        {entries.length} features with no documented opt-out for an individual user. &quot;use the
-        product less&quot; is not a setting.
+      <PageHeader title="no off switch" tone="never">
+        {entries.length} features with no documented off switch for an individual user. &quot;use it
+        less&quot; is not a setting.
       </PageHeader>
 
       <div className="mt-6">
         <EntryTable
           entries={entries.map(toExplorerEntry)}
-          emptyLabel="nothing unkillable yet. enjoy it while it lasts."
+          emptyLabel="nothing without an off switch yet. enjoy it while it lasts."
         />
       </div>
 

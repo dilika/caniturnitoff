@@ -27,7 +27,7 @@ export function SponsorCard({
       <div className="flex items-center gap-2 text-sm font-semibold">
         <span aria-hidden>{sponsor.emoji ?? "◆"}</span>
         <span className="truncate">{sponsor.name}</span>
-        <span className="chip ml-auto shrink-0 border-line text-[9px] text-dim">sponsor</span>
+        <span className="chip ml-auto shrink-0 border-line text-[12px] text-dim">sponsor</span>
       </div>
       <p className="mt-1 line-clamp-2 text-xs text-muted">{sponsor.pitch}</p>
     </a>
@@ -53,7 +53,7 @@ export function SponsorGrid() {
     <section className="mt-10">
       <div className="mb-2 flex items-baseline justify-between">
         <h2 className="text-xs uppercase tracking-widest text-dim">sponsors</h2>
-        <Link href="/sponsor" className="text-[11px] text-muted hover:text-acid">
+        <Link href="/sponsor" className="text-sm text-muted hover:text-acid">
           {open > 0
             ? `${open}/${site.sponsorSlots} slots open at $${site.sponsorPricePerSlot}/mo →`
             : `${site.sponsorSlots}/${site.sponsorSlots} slots taken — get notified →`}
@@ -72,7 +72,7 @@ export function SponsorGrid() {
           </Link>
         )}
       </div>
-      <p className="mt-2 text-[10px] text-dim">
+      <p className="mt-2 text-[12px] text-dim">
         sponsors can never buy, soften or delay a verdict. they can appear on /never. see{" "}
         <Link href="/methodology" className="underline">
           methodology

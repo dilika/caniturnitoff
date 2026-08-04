@@ -78,7 +78,7 @@ export function VoteButtons({
       >
         ⚠️ it changed <span className="tabular-nums text-fg">{counts.changed}</span>
       </button>
-      <span className="text-[11px] text-dim">
+      <span className="text-sm text-dim">
         {message ?? "one vote per entry"}
       </span>
     </div>

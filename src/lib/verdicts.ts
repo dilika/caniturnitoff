@@ -19,7 +19,7 @@ export const verdictMeta: Record<Verdict, VerdictMeta> = {
     color: "text-off",
     border: "border-off/40",
     bg: "bg-off/10",
-    solid: "bg-off text-[#06210f]",
+    solid: "bg-off text-[#042f2e]",
     blurb: "a real toggle, under 30 seconds, no collateral damage",
     weight: 0,
   },
@@ -40,7 +40,7 @@ export const verdictMeta: Record<Verdict, VerdictMeta> = {
     border: "border-never/40",
     bg: "bg-never/10",
     solid: "bg-never text-[#2c0508]",
-    blurb: "no opt-out for a normal user. it is the product now",
+    blurb: "no off switch for a normal user. it is part of the product",
     weight: 2,
   },
 };

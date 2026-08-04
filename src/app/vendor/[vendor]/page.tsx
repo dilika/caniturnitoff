@@ -22,7 +22,7 @@ export async function generateMetadata({
   const entries = await entriesByVendor(vendor);
   if (!entries.length) return {};
   return {
-    title: `Every AI feature ${entries[0].vendor} forced on you`,
+    title: `Every AI feature ${entries[0].vendor} ships with`,
     description: `${entries.length} tracked AI features from ${entries[0].vendor} — which ones you can turn off, and which ones you cannot.`,
   };
 }
@@ -37,8 +37,7 @@ export default async function VendorPage({ params }: { params: Promise<{ vendor:
   return (
     <>
       <PageHeader title={entries[0].vendor}>
-        {entries.length} tracked AI features · {never} with no opt-out ·{" "}
-        {entries.filter((e) => e.onByDefault).length} on by default
+        {`${entries.length} tracked AI features · ${never} with no off switch · ${entries.filter((e) => e.onByDefault).length} on by default`}
       </PageHeader>
 
       <div className="mt-6">

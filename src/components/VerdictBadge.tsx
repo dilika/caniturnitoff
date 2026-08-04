@@ -12,7 +12,7 @@ export function VerdictBadge({
   return (
     <span
       className={`inline-flex items-center justify-center rounded-sm ${m.solid} ${
-        big ? "px-3 py-1 text-sm tracking-widest" : "px-2 py-[0.15rem] text-[10px] tracking-wider"
+        big ? "px-3 py-1 text-sm tracking-widest" : "px-2 py-[0.15rem] text-[12px] tracking-wider"
       } font-bold uppercase`}
     >
       {m.label}
@@ -34,7 +34,7 @@ export function Flag({
   } as const;
   return (
     <span
-      className={`inline-flex items-center border px-1.5 py-0.5 text-[10px] uppercase tracking-wider ${tones[tone]}`}
+      className={`inline-flex items-center border px-1.5 py-0.5 text-[12px] uppercase tracking-wider ${tones[tone]}`}
     >
       {children}
     </span>

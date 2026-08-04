@@ -41,7 +41,7 @@ export default async function CategoryPage({
     <>
       <PageHeader title={`${meta.emoji} ${meta.label}`}>
         {entries.length} tracked features · {entries.filter((e) => e.verdict === "never").length}{" "}
-        with no opt-out at all.
+        with no off switch at all.
       </PageHeader>
 
       <div className="mt-6">

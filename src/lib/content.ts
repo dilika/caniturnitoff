@@ -44,7 +44,7 @@ export type RankedEntry = Entry & {
 };
 
 /**
- * Ranking = the Offender List order.
+ * Ranking = the feature list order.
  * Harshest verdict first, then most disputed, then most annoying to disable.
  */
 export async function rankedEntries(): Promise<RankedEntry[]> {

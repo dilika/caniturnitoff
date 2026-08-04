@@ -49,7 +49,7 @@ export default function MethodologyPage() {
         <h2 className="text-xs uppercase tracking-widest text-dim">flags, not verdicts</h2>
         <ul className="mt-2 space-y-1 text-sm text-muted">
           <li>
-            <strong className="text-never">on by default</strong> — you were opted in without asking.
+            <strong className="text-never">on by default</strong> — enabled without an explicit action from you.
           </li>
           <li>
             <strong className="text-flag">comes back</strong> — sourced reports of the toggle being
@@ -78,10 +78,10 @@ export default function MethodologyPage() {
         <h2 className="text-xs uppercase tracking-widest text-dim">money never touches a verdict</h2>
         <ul className="mt-2 space-y-1 text-sm text-muted">
           <li>sponsors cannot buy, soften, or delay a verdict. ever.</li>
-          <li>a sponsor&apos;s own product can appear on the wall of shame. if that ends the
+          <li>a sponsor&apos;s own product can appear on the no off switch list. if that ends the
             sponsorship, it ends.</li>
           <li>
-            alternatives are picked on one criterion — &quot;does not force AI on the user&quot; —
+            alternatives are picked on one criterion — &quot;lets users opt out of AI&quot; —
             before any affiliate relationship. affiliate links are labelled.
           </li>
           <li>no display ad networks, no paid removal, no sponsored entries.</li>

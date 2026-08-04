@@ -22,7 +22,7 @@ export function EntryTable({
 
   return (
     <div className="overflow-x-auto">
-      <table className="w-full border-collapse text-sm">
+      <table className="w-full border-collapse text-base">
         <thead>
           <tr className="border-b border-line">
             <th className="thead-cell w-8">#</th>
@@ -43,7 +43,7 @@ export function EntryTable({
                 onClick={() => router.push(`/${e.slug}`)}
                 className="cursor-pointer border-b border-line transition-colors hover:bg-panel-2"
               >
-                <td className="tbody-cell text-xs tabular-nums text-dim">
+                <td className="tbody-cell text-sm tabular-nums text-dim">
                   {String(e.rank).padStart(2, "0")}
                 </td>
 
@@ -66,7 +66,7 @@ export function EntryTable({
                   )}
                 </td>
 
-                <td className="tbody-cell hidden text-xs text-muted sm:table-cell">
+                <td className="tbody-cell hidden text-sm text-muted sm:table-cell">
                   {cat?.emoji} {cat?.label}
                 </td>
 
@@ -78,7 +78,7 @@ export function EntryTable({
                   <VerdictBadge verdict={e.verdict} />
                 </td>
 
-                <td className="tbody-cell hidden text-right text-xs tabular-nums text-dim sm:table-cell">
+                <td className="tbody-cell hidden text-right text-sm tabular-nums text-dim sm:table-cell">
                   {e.votes || "–"}
                 </td>
               </tr>
@@ -98,11 +98,11 @@ function Effort({ level }: { level: number }) {
         {[1, 2, 3, 4, 5].map((i) => (
           <span
             key={i}
-            className={`h-2.5 w-[3px] rounded-[1px] ${i <= level ? tone : "bg-line-2"}`}
+            className={`h-3 w-[4px] rounded-[1px] ${i <= level ? tone : "bg-line-2"}`}
           />
         ))}
       </span>
-      <span className="text-[10px] tabular-nums text-dim">{level}/5</span>
+      <span className="text-sm tabular-nums text-dim">{level}/5</span>
     </span>
   );
 }

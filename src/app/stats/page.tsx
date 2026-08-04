@@ -7,7 +7,7 @@ import { verdictMeta, VERDICTS } from "@/lib/verdicts";
 export const metadata: Metadata = {
   title: "Stats — the state of the off switch",
   description:
-    "Public dataset stats: how many AI features can be turned off, how many are on by default, and who the worst offenders are.",
+    "Public dataset stats: how many AI features can be turned off, how many are on by default, and which vendors have the most features without an off switch.",
 };
 
 export default async function StatsPage() {
@@ -59,7 +59,7 @@ export default async function StatsPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-xs uppercase tracking-widest text-dim">worst offenders</h2>
+        <h2 className="mb-2 text-xs uppercase tracking-widest text-dim">by vendor</h2>
         <div className="panel divide-y divide-line">
           {byVendor.map(([vendor, v]) => (
             <Link
@@ -69,7 +69,7 @@ export default async function StatsPage() {
             >
               <span>{vendor}</span>
               <span className="text-xs text-muted tabular-nums">
-                {v.total} tracked · <span className="text-never">{v.never} unkillable</span>
+                {v.total} tracked · <span className="text-never">{v.never} no off switch</span>
               </span>
             </Link>
           ))}
@@ -79,7 +79,7 @@ export default async function StatsPage() {
       <section className="panel p-4 text-sm text-muted">
         <h2 className="text-xs uppercase tracking-widest text-dim">dataset</h2>
         <p className="mt-2">
-          {stats.onByDefault} of {stats.total} features were enabled without asking.{" "}
+          {stats.onByDefault} of {stats.total} features are on by default.{" "}
           {stats.comesBack} are documented to come back after an update.
         </p>
         <p className="mt-2">

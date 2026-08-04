@@ -46,7 +46,7 @@ export default async function SponsorPage() {
         <h2 className="text-xs uppercase tracking-widest text-dim">what you get</h2>
         <ul className="mt-2 space-y-1 text-sm text-muted">
           <li>a card in the footer grid on every page</li>
-          <li>rotation into the 2 inline cards inside the offender list</li>
+          <li>rotation into the 2 inline cards inside the feature list</li>
           <li>utm-tagged link, `rel=&quot;sponsored&quot;`, clearly labelled as a sponsor</li>
           <li>one mention in the weekly email while the slot is live</li>
         </ul>
@@ -56,11 +56,11 @@ export default async function SponsorPage() {
         <h2 className="text-xs uppercase tracking-widest text-dim">what you cannot buy</h2>
         <ul className="mt-2 space-y-1 text-sm text-muted">
           <li>a verdict, a softer verdict, or a delayed verdict</li>
-          <li>removal from the wall of shame</li>
+          <li>removal from the no off switch list</li>
           <li>an entry about a competitor</li>
         </ul>
         <p className="mt-2 text-xs text-dim">
-          if your product forces AI on users, it gets the verdict it deserves — sponsorship or not.
+          if your product enables AI by default, it gets the verdict it deserves — sponsorship or not.
           that rule is why the audience trusts the list, which is the only reason the slot is worth
           anything.
         </p>

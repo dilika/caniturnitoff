@@ -50,8 +50,8 @@ export default async function OGImage() {
             can i turn <span style={{ color: "#c6ff3d" }}>___</span> off?
           </div>
           <div style={{ display: "flex", fontSize: 28, color: "#8b948a", maxWidth: 900 }}>
-            {stats.total} AI features shipped into software you already paid for.
-            one question each: can you actually turn it off, or is it the product now?
+            {stats.total} AI features added to software you already use.
+            one question each: can you actually turn it off, or is it part of the product?
           </div>
         </div>
 
@@ -63,7 +63,7 @@ export default async function OGImage() {
           }}
         >
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            <span style={{ fontSize: 48, fontWeight: 700, color: "#4ade80" }}>
+            <span style={{ fontSize: 48, fontWeight: 700, color: "#22d3ee" }}>
               {stats.byVerdict.off}
             </span>
             <span style={{ fontSize: 18, color: "#5f665e" }}>can turn off</span>

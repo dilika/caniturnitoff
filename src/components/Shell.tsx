@@ -6,22 +6,28 @@ import { ThemeToggle } from "./ThemeToggle";
 export function Nav() {
   return (
     <header className="navbar sticky top-0 z-20">
-      <div className="container-tight flex h-12 items-center justify-between gap-4">
+      <div className="container-tight flex h-14 items-center justify-between gap-4">
         <Link href="/" className="group flex items-center gap-2">
           <span
-            className="flex size-6 items-center justify-center rounded-md bg-acid text-[13px] font-bold text-[#06210f]"
+            className="flex size-7 items-center justify-center rounded-md bg-acid text-base font-bold text-[#042f2e]"
             aria-hidden
           >
             ⏻
           </span>
-          <span className="text-[13px] font-semibold tracking-tight group-hover:text-acid">
+          <span className="text-base font-semibold tracking-tight group-hover:text-acid">
             {site.shortName}
           </span>
         </Link>
 
-        <nav className="flex items-center gap-3 text-[11px] text-muted">
+        <nav className="flex items-center gap-4 text-base text-muted">
+          <Link href="/changed" className="hidden hover:text-acid sm:inline">
+            changed
+          </Link>
+          <Link href="/disputed" className="hidden hover:text-never sm:inline">
+            disputed
+          </Link>
           <Link href="/never" className="hidden hover:text-never sm:inline">
-            wall of shame
+            no off switch
           </Link>
           <Link href="/comes-back" className="hidden hover:text-flag sm:inline">
             comes back
@@ -42,7 +48,7 @@ export function Nav() {
             href={site.repo}
             target="_blank"
             rel="noopener"
-            className="flex items-center gap-1 rounded-sm border border-line-2 px-2 py-1 text-[10px] uppercase tracking-wider transition-colors hover:border-acid/60 hover:text-acid"
+            className="flex items-center gap-1 rounded-sm border border-line-2 px-2 py-1 text-[12px] uppercase tracking-wider transition-colors hover:border-acid/60 hover:text-acid"
           >
             github ↗
           </a>
@@ -65,9 +71,9 @@ export function PageHeader({
     tone === "never" ? "text-never" : tone === "flag" ? "text-flag" : tone === "acid" ? "text-acid" : "";
   return (
     <header className="border-b border-line pb-5 pt-2 text-center">
-      <h1 className={`text-3xl font-semibold tracking-tight sm:text-4xl ${toneClass}`}>{title}</h1>
+      <h1 className={`text-4xl font-semibold tracking-tight sm:text-5xl ${toneClass}`}>{title}</h1>
       {children && (
-        <p className="mx-auto mt-2 max-w-xl text-[13px] leading-relaxed text-muted">{children}</p>
+        <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-muted">{children}</p>
       )}
     </header>
   );
@@ -87,8 +93,8 @@ export async function StatStrip() {
     <div className="grid grid-cols-2 divide-y divide-line rounded-sm border border-line sm:grid-cols-3 sm:divide-y-0 lg:grid-cols-6 lg:divide-x">
       {items.map((i) => (
         <div key={i.k} className="px-3 py-2.5 text-center">
-          <div className="text-xl font-semibold tabular-nums text-acid">{i.v}</div>
-          <div className="mt-0.5 text-[9.5px] uppercase tracking-[0.1em] text-dim">{i.k}</div>
+          <div className="text-2xl font-semibold tabular-nums text-acid">{i.v}</div>
+          <div className="mt-0.5 text-sm uppercase tracking-[0.1em] text-dim">{i.k}</div>
         </div>
       ))}
     </div>
@@ -141,12 +147,12 @@ export function Newsletter() {
         />
         <button
           type="submit"
-          className="rounded-sm bg-acid px-4 py-2 text-sm font-semibold text-[#06210f] transition-opacity hover:opacity-85"
+          className="rounded-sm bg-acid px-4 py-2 text-sm font-semibold text-[#042f2e] transition-opacity hover:opacity-85"
         >
           keep me opted out
         </button>
       </form>
-      <p className="mt-2.5 text-[10px] text-dim">
+      <p className="mt-2.5 text-[12px] text-dim">
         free · no spam · the settings keep moving, so this list keeps mattering
       </p>
     </section>
@@ -156,11 +162,20 @@ export function Newsletter() {
 export function Footer() {
   return (
     <footer className="mt-14 border-t border-line py-7">
-      <div className="container-tight flex flex-col items-center gap-3 text-center text-[11px] text-dim">
+      <div className="container-tight flex flex-col items-center gap-3 text-center text-sm text-dim">
         <span>
           {site.name} — {site.hnLine}
         </span>
         <span className="flex flex-wrap justify-center gap-3">
+          <Link href="/changed" className="hover:text-fg">
+            what changed
+          </Link>
+          <Link href="/disputed" className="hover:text-fg">
+            disputed
+          </Link>
+          <Link href="/stale" className="hover:text-fg">
+            stale
+          </Link>
           <Link href="/methodology" className="hover:text-fg">
             methodology
           </Link>

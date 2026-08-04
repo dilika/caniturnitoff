@@ -43,7 +43,7 @@ export default async function OGImage({
 
   const v = verdictMeta[entry.verdict];
   const verdictColors: Record<string, string> = {
-    off: "#4ade80",
+    off: "#22d3ee",
     buried: "#fbbf24",
     never: "#f8717a",
   };
@@ -165,7 +165,7 @@ export default async function OGImage({
             color: "#5f665e",
           }}
         >
-          <span>#{entry.rank} on the offender list</span>
+          <span>#{entry.rank} on the list</span>
           <span>·</span>
           <span>verified {entry.lastVerified}</span>
           <span>·</span>

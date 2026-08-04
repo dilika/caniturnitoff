@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const vendors = [...new Set(entries.map((e) => vendorSlug(e.vendor)))];
 
   // "/sponsor" is intentionally excluded — sponsorships are paused and the page is noindex.
-  const staticRoutes = ["", "/never", "/comes-back", "/methodology", "/stats"];
+  const staticRoutes = ["", "/changed", "/disputed", "/stale", "/never", "/comes-back", "/methodology", "/stats"];
 
   return [
     ...staticRoutes.map((path) => ({
