@@ -6,7 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries = loadEntries();
   const vendors = [...new Set(entries.map((e) => vendorSlug(e.vendor)))];
 
-  const staticRoutes = ["", "/never", "/comes-back", "/methodology", "/stats", "/sponsor"];
+  // "/sponsor" is intentionally excluded — sponsorships are paused and the page is noindex.
+  const staticRoutes = ["", "/never", "/comes-back", "/methodology", "/stats"];
 
   return [
     ...staticRoutes.map((path) => ({

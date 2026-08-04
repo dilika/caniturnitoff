@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHeader, StatStrip } from "@/components/Shell";
 import { rankedEntries, siteStats } from "@/lib/content";
 import { verdictMeta, VERDICTS } from "@/lib/verdicts";
 
@@ -23,14 +24,13 @@ export default async function StatsPage() {
   ).sort((a, b) => b[1].never - a[1].never || b[1].total - a[1].total);
 
   return (
-    <article className="space-y-6">
-      <header>
-        <h1 className="text-2xl font-semibold tracking-tight">stats</h1>
-        <p className="mt-1 text-sm text-muted">
-          public, because why not. {stats.total} features, {stats.vendors} vendors, {stats.votes}{" "}
-          votes.
-        </p>
-      </header>
+    <article className="space-y-7">
+      <PageHeader title="stats">
+        public, because why not. {stats.total} features, {stats.vendors} vendors, {stats.votes}{" "}
+        votes.
+      </PageHeader>
+
+      <StatStrip />
 
       <section>
         <h2 className="mb-2 text-xs uppercase tracking-widest text-dim">verdict split</h2>

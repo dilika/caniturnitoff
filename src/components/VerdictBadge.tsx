@@ -11,11 +11,10 @@ export function VerdictBadge({
   const big = size === "lg";
   return (
     <span
-      className={`inline-flex items-center gap-1.5 border ${m.border} ${m.bg} ${m.color} ${
-        big ? "px-3 py-1 text-base tracking-widest" : "px-2 py-0.5 text-[11px] tracking-wider"
-      } font-semibold uppercase`}
+      className={`inline-flex items-center justify-center rounded-sm ${m.solid} ${
+        big ? "px-3 py-1 text-sm tracking-widest" : "px-2 py-[0.15rem] text-[10px] tracking-wider"
+      } font-bold uppercase`}
     >
-      <span aria-hidden>{m.dot}</span>
       {m.label}
     </span>
   );

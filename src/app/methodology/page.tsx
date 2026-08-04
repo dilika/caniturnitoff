@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/Shell";
 import { site } from "@/lib/site";
 import { verdictMeta, VERDICTS } from "@/lib/verdicts";
 
@@ -10,14 +11,11 @@ export const metadata: Metadata = {
 
 export default function MethodologyPage() {
   return (
-    <article className="max-w-2xl space-y-6">
-      <header>
-        <h1 className="text-2xl font-semibold tracking-tight">methodology</h1>
-        <p className="mt-1 text-sm text-muted">
-          the only asset this site has is that you believe the verdict. so here are the rules,
-          in public.
-        </p>
-      </header>
+    <article className="mx-auto max-w-2xl space-y-7">
+      <PageHeader title="methodology">
+        the only asset this site has is that you believe the verdict. so here are the rules, in
+        public.
+      </PageHeader>
 
       <section>
         <h2 className="text-xs uppercase tracking-widest text-dim">the one question</h2>

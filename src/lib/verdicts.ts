@@ -7,6 +7,7 @@ type VerdictMeta = {
   color: string;
   border: string;
   bg: string;
+  solid: string;
   blurb: string;
   weight: number;
 };
@@ -18,6 +19,7 @@ export const verdictMeta: Record<Verdict, VerdictMeta> = {
     color: "text-off",
     border: "border-off/40",
     bg: "bg-off/10",
+    solid: "bg-off text-[#06210f]",
     blurb: "a real toggle, under 30 seconds, no collateral damage",
     weight: 0,
   },
@@ -27,6 +29,7 @@ export const verdictMeta: Record<Verdict, VerdictMeta> = {
     color: "text-buried",
     border: "border-buried/40",
     bg: "bg-buried/10",
+    solid: "bg-buried text-[#2a1c00]",
     blurb: "possible, but they hid it — flags, registry, admin, or you lose other features",
     weight: 1,
   },
@@ -36,6 +39,7 @@ export const verdictMeta: Record<Verdict, VerdictMeta> = {
     color: "text-never",
     border: "border-never/40",
     bg: "bg-never/10",
+    solid: "bg-never text-[#2c0508]",
     blurb: "no opt-out for a normal user. it is the product now",
     weight: 2,
   },

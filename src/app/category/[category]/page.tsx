@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { EntryRow } from "@/components/EntryRow";
-import { CategoryNav, Newsletter } from "@/components/Shell";
-import { SponsorGrid } from "@/components/Sponsors";
+import { EntryTable } from "@/components/EntryTable";
+import { CategoryNav, Newsletter, PageHeader } from "@/components/Shell";
+// import { SponsorGrid } from "@/components/Sponsors"; // sponsors paused until traffic justifies it
 import { entriesByCategory } from "@/lib/content";
+import { toExplorerEntry } from "@/lib/entry-view";
 import { categories, categoryMeta } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -38,29 +39,21 @@ export default async function CategoryPage({
 
   return (
     <>
-      <h1 className="text-2xl font-semibold tracking-tight">
-        {meta.emoji} {meta.label}
-      </h1>
-      <p className="mt-1 text-sm text-muted">
+      <PageHeader title={`${meta.emoji} ${meta.label}`}>
         {entries.length} tracked features · {entries.filter((e) => e.verdict === "never").length}{" "}
         with no opt-out at all.
-      </p>
+      </PageHeader>
 
-      <div className="mt-4">
+      <div className="mt-6">
         <CategoryNav active={category} />
       </div>
 
-      <section className="panel mt-4">
-        {entries.map((e) => (
-          <EntryRow key={e.slug} entry={e} />
-        ))}
-        {!entries.length && (
-          <p className="px-3 py-6 text-sm text-dim">nothing here yet. that will not last.</p>
-        )}
-      </section>
+      <div className="mt-6">
+        <EntryTable entries={entries.map(toExplorerEntry)} />
+      </div>
 
       <Newsletter />
-      <SponsorGrid />
+      {/* <SponsorGrid /> — sponsors paused until traffic justifies it */}
     </>
   );
 }

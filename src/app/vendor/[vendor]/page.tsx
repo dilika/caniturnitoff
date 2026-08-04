@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { EntryRow } from "@/components/EntryRow";
-import { Newsletter } from "@/components/Shell";
-import { SponsorGrid } from "@/components/Sponsors";
+import { EntryTable } from "@/components/EntryTable";
+import { Newsletter, PageHeader } from "@/components/Shell";
+// import { SponsorGrid } from "@/components/Sponsors"; // sponsors paused until traffic justifies it
 import { entriesByVendor, loadEntries, vendorSlug } from "@/lib/content";
+import { toExplorerEntry } from "@/lib/entry-view";
 
 export const dynamicParams = false;
 
@@ -35,20 +36,17 @@ export default async function VendorPage({ params }: { params: Promise<{ vendor:
 
   return (
     <>
-      <h1 className="text-2xl font-semibold tracking-tight">{entries[0].vendor}</h1>
-      <p className="mt-1 text-sm text-muted">
+      <PageHeader title={entries[0].vendor}>
         {entries.length} tracked AI features · {never} with no opt-out ·{" "}
         {entries.filter((e) => e.onByDefault).length} on by default
-      </p>
+      </PageHeader>
 
-      <section className="panel mt-4">
-        {entries.map((e) => (
-          <EntryRow key={e.slug} entry={e} />
-        ))}
-      </section>
+      <div className="mt-6">
+        <EntryTable entries={entries.map(toExplorerEntry)} />
+      </div>
 
       <Newsletter />
-      <SponsorGrid />
+      {/* <SponsorGrid /> — sponsors paused until traffic justifies it */}
     </>
   );
 }

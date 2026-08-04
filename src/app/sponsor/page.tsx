@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/Shell";
 import { loadSponsors, siteStats } from "@/lib/content";
 import { site } from "@/lib/site";
 
+// Sponsorship is paused until traffic justifies it. The page stays reachable
+// for anyone holding a direct link, but it is delisted from nav, footer,
+// sitemap and search engines.
 export const metadata: Metadata = {
   title: "Sponsor — reach people actively turning AI off",
   description: `${site.sponsorSlots} sponsor slots on the off-switch database. Flat monthly price, no impressions games, no ad network.`,
+  robots: { index: false, follow: false },
 };
 
 export default async function SponsorPage() {
@@ -13,14 +18,17 @@ export default async function SponsorPage() {
   const stats = await siteStats();
 
   return (
-    <article className="max-w-2xl space-y-6">
-      <header>
-        <h1 className="text-2xl font-semibold tracking-tight">sponsor</h1>
-        <p className="mt-1 text-sm text-muted">
-          {taken}/{site.sponsorSlots} slots taken · ${site.sponsorPricePerSlot}/mo flat · no ad
-          network, no impression games, no tracking pixels.
-        </p>
-      </header>
+    <article className="mx-auto max-w-2xl space-y-7">
+      <PageHeader title="sponsor">
+        {taken}/{site.sponsorSlots} slots taken · ${site.sponsorPricePerSlot}/mo flat · no ad
+        network, no impression games, no tracking pixels.
+      </PageHeader>
+
+      <p className="panel px-4 py-3 text-center text-xs text-muted">
+        sponsorships are <strong className="text-fg">paused</strong> while we watch how traffic
+        settles. the page stays up so the terms are public — reach out if you want the first slot
+        when it reopens.
+      </p>
 
       <section className="panel p-4">
         <h2 className="text-xs uppercase tracking-widest text-dim">who reads this</h2>

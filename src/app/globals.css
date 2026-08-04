@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #070807;
-  --color-panel: #0e100e;
-  --color-panel-2: #141714;
-  --color-line: #1e221e;
-  --color-line-2: #2a2f2a;
-  --color-fg: #e8ebe6;
-  --color-muted: #8b948a;
-  --color-dim: #5f665e;
+  --color-ink: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
 
-  --color-acid: #c6ff3d;
+  --color-acid: #4ade80;
   --color-off: #4ade80;
   --color-buried: #fbbf24;
   --color-never: #f8717a;
@@ -19,20 +19,52 @@
   --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", "Menlo", "Consolas",
     "Liberation Mono", monospace;
 
-  --radius-card: 2px;
+  --radius-card: 3px;
 }
 
 @layer base {
+  :root {
+    --bg: #080a08;
+    --panel: #0f120f;
+    --panel-2: #161a16;
+    --line: #1d221d;
+    --line-2: #2a302a;
+    --fg: #e9ede8;
+    --muted: #8a938a;
+    --dim: #5c645c;
+    --glow: rgba(74, 222, 128, 0.07);
+    --veil: rgba(8, 10, 8, 0.88);
+    --stripe: rgba(255, 255, 255, 0.014);
+  }
+
+  [data-theme="light"] {
+    --bg: #f7f8f5;
+    --panel: #ffffff;
+    --panel-2: #eff2ed;
+    --line: #e0e5dd;
+    --line-2: #ccd3c9;
+    --fg: #151814;
+    --muted: #58604f;
+    --dim: #858d80;
+    --glow: rgba(34, 160, 90, 0.1);
+    --veil: rgba(247, 248, 245, 0.88);
+    --stripe: rgba(0, 0, 0, 0.014);
+  }
+
   html {
-    background: var(--color-ink);
+    background: var(--bg);
     color-scheme: dark;
+  }
+
+  html[data-theme="light"] {
+    color-scheme: light;
   }
 
   body {
     background:
-      radial-gradient(60rem 40rem at 50% -10rem, #10140f 0%, transparent 70%),
-      var(--color-ink);
-    color: var(--color-fg);
+      radial-gradient(70rem 45rem at 50% -12rem, var(--glow) 0%, transparent 70%),
+      var(--bg);
+    color: var(--fg);
     font-family: var(--font-mono);
     font-size: 14px;
     line-height: 1.55;
@@ -41,7 +73,7 @@
 
   ::selection {
     background: var(--color-acid);
-    color: #0b0d0a;
+    color: #06210f;
   }
 
   a {
@@ -52,44 +84,181 @@
   h1,
   h2,
   h3 {
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
 }
 
+/* ---------- layout ---------- */
+
 @utility container-tight {
   width: 100%;
-  max-width: 62rem;
+  max-width: 52rem;
   margin-inline: auto;
-  padding-inline: 1rem;
+  padding-inline: 1.25rem;
 }
 
-@utility hairline {
-  border-bottom: 1px solid var(--color-line);
-}
+/* ---------- surfaces ---------- */
 
 @utility panel {
-  background: var(--color-panel);
-  border: 1px solid var(--color-line);
+  background: var(--panel);
+  border: 1px solid var(--line);
   border-radius: var(--radius-card);
 }
 
-@utility chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  border: 1px solid var(--color-line-2);
-  padding: 0.1rem 0.45rem;
-  font-size: 11px;
-  line-height: 1.5;
-  text-transform: lowercase;
-  color: var(--color-muted);
-  white-space: nowrap;
+@utility hairline {
+  border-bottom: 1px solid var(--line);
+}
+
+@utility navbar {
+  background: var(--veil);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
 }
 
 @utility scanline {
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0 3px,
-    rgba(255, 255, 255, 0.015) 3px 4px
+    var(--stripe) 3px 4px
   );
+}
+
+/* ---------- pills / chips ---------- */
+
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+  font-size: 11px;
+  line-height: 1.4;
+  text-transform: lowercase;
+  color: var(--muted);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color 0.12s ease,
+    color 0.12s ease,
+    background-color 0.12s ease;
+}
+
+@utility pill-on {
+  background: var(--color-acid);
+  border-color: var(--color-acid);
+  color: #06210f;
+  font-weight: 600;
+}
+
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--line-2);
+  border-radius: 2px;
+  padding: 0.12rem 0.4rem;
+  font-size: 10px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ---------- segmented control ---------- */
+
+@utility seg {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line-2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+@utility seg-btn {
+  padding: 0.22rem 0.55rem;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
+}
+
+@utility seg-btn-on {
+  background: var(--panel-2);
+  color: var(--fg);
+  font-weight: 600;
+}
+
+/* ---------- terminal input ---------- */
+
+@utility termbox {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--line-2);
+  border-radius: 3px;
+  background: var(--panel);
+  padding: 0.7rem 0.85rem;
+  transition: border-color 0.15s ease;
+}
+
+@utility caret {
+  display: inline-block;
+  width: 0.5rem;
+  height: 1.05rem;
+  background: var(--color-acid);
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------- odometer ---------- */
+
+@utility odo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  padding: 0.28rem 0.15rem;
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  border-radius: 3px;
+  background: rgba(74, 222, 128, 0.08);
+  color: var(--color-acid);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- table ---------- */
+
+@utility thead-cell {
+  padding: 0.5rem 0.75rem;
+  font-size: 9.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--dim);
+  text-align: left;
+  white-space: nowrap;
+}
+
+@utility tbody-cell {
+  padding: 0.6rem 0.75rem;
+  vertical-align: middle;
 }

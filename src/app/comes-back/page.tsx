@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { EntryRow } from "@/components/EntryRow";
-import { Newsletter } from "@/components/Shell";
-import { SponsorGrid } from "@/components/Sponsors";
+import { EntryTable } from "@/components/EntryTable";
+import { Newsletter, PageHeader } from "@/components/Shell";
+// import { SponsorGrid } from "@/components/Sponsors"; // sponsors paused until traffic justifies it
 import { rankedEntries } from "@/lib/content";
+import { toExplorerEntry } from "@/lib/entry-view";
 
 export const metadata: Metadata = {
   title: "Toggles that came back — AI features re-enabled by updates",
@@ -15,21 +16,20 @@ export default async function ComesBackPage() {
   const entries = allRanked.filter((e) => e.comesBack);
   return (
     <>
-      <h1 className="text-2xl font-semibold tracking-tight text-flag">it came back</h1>
-      <p className="mt-1 max-w-2xl text-sm text-muted">
+      <PageHeader title="it came back" tone="flag">
         you turned it off. an update turned it back on. these are the toggles worth re-checking after
         every release — {entries.length} so far.
-      </p>
-      <section className="panel mt-4">
-        {entries.map((e) => (
-          <EntryRow key={e.slug} entry={e} />
-        ))}
-        {!entries.length && (
-          <p className="px-3 py-6 text-sm text-dim">nothing flagged yet. give it a patch cycle.</p>
-        )}
-      </section>
+      </PageHeader>
+
+      <div className="mt-6">
+        <EntryTable
+          entries={entries.map(toExplorerEntry)}
+          emptyLabel="nothing flagged yet. give it a patch cycle."
+        />
+      </div>
+
       <Newsletter />
-      <SponsorGrid />
+      {/* <SponsorGrid /> — sponsors paused until traffic justifies it */}
     </>
   );
 }

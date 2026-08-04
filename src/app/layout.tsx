@@ -25,9 +25,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{if(localStorage.getItem('citio_theme')==='light'){document.documentElement.dataset.theme='light'}}catch(e){}})()",
+          }}
+        />
+      </head>
       <body>
         <Nav />
-        <main className="container-tight py-6">{children}</main>
+        <main className="container-tight pb-8 pt-4">{children}</main>
         <Footer />
         <script
           type="application/ld+json"

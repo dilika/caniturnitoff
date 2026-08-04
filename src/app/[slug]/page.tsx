@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Flag, VerdictBadge } from "@/components/VerdictBadge";
 import { Newsletter } from "@/components/Shell";
-import { SponsorGrid } from "@/components/Sponsors";
+// import { SponsorGrid } from "@/components/Sponsors"; // sponsors paused until traffic justifies it
 import { VoteButtons } from "@/components/VoteButtons";
 import { getEntry, loadEntries, rankedEntries, vendorSlug } from "@/lib/content";
 import { categoryMeta, site } from "@/lib/site";
@@ -90,11 +90,11 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
         <span className="ml-auto tabular-nums">#{entry.rank} on the offender list</span>
       </nav>
 
-      <header className="panel scanline p-5">
+      <header className="panel scanline p-6 text-center">
         <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
           Can I turn off {entry.app} — {entry.feature}?
         </h1>
-        <div className="mt-3 flex flex-wrap items-center gap-2">
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
           <VerdictBadge verdict={entry.verdict} size="lg" />
           {entry.onByDefault && <Flag tone="warn">on by default</Flag>}
           {entry.comesBack && <Flag tone="flag">comes back after updates</Flag>}
@@ -102,8 +102,8 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
           <span className="chip">difficulty {entry.difficulty}/5</span>
           <span className="chip">{entry.platforms.join(" · ")}</span>
         </div>
-        <p className="mt-3 max-w-2xl text-sm text-fg">{entry.summary}</p>
-        <p className="mt-1 text-xs text-dim">
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-fg">{entry.summary}</p>
+        <p className="mt-2 text-xs text-dim">
           {v.blurb} · verified {entry.lastVerified} ({daysSince(entry.lastVerified)}d ago)
           {stale && " · ⚠ stale, re-verification queued"}
         </p>
@@ -283,7 +283,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
       </section>
 
       <Newsletter />
-      <SponsorGrid />
+      {/* <SponsorGrid /> — sponsors paused until traffic justifies it */}
 
       <script
         type="application/ld+json"
