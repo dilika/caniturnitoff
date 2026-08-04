@@ -28,6 +28,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main className="container-tight py-6">{children}</main>
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: site.name,
+              url: site.url,
+              description: site.tagline,
+              potentialAction: {
+                "@type": "SearchAction",
+                target: `${site.url}/?q={search_term_string}`,
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );
